@@ -21,7 +21,7 @@ document.onreadystatechange = function () {
         });
         
         var playerLayer = game.createLayer('players');
-        var player = new PixelJS.Player();
+        var player = new PixelJS.createEntity();
         player.addToLayer(playerLayer);
         player.pos = { x: 200, y: 300 };
         player.size = { width: 32, height: 32 };
