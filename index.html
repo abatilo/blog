@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Cat and mouse</title>
+  <script src="pixi.js"></script>
+</head>
+<body>
+  <script>
+    var renderer = PIXI.autoDetectRenderer(1280, 720, { backgroundColor: 0x1099bb });
+    document.body.appendChild(renderer.view);
+
+    var stage = new PIXI.Container();
+    var texture = PIXI.Texture.fromImage('mouse.png');
+    var mouse = new PIXI.Sprite(texture);
+    mouse.anchor.x = 0;
+    mouse.anchor.y = 0;
+    mouse.position.x = 0;
+    mouse.position.y = 0;
+
+    stage.addChild(mouse);
+
+    animate();
+    function animate() {
+      requestAnimationFrame(animate);
+
+      if (wPressed) {
+        mouse.position.y -= 1;
+      }
+      if (aPressed) {
+        mouse.position.x -= 1;
+      }
+      if (sPressed) {
+        mouse.position.y += 1;
+      }
+      if (dPressed) {
+        mouse.position.x += 1;
+      }
+
+      renderer.render(stage);
+    }
+
+    var wPressed = false;
+    var aPressed = false;
+    var sPressed = false;
+    var dPressed = false;
+
+    var w = keyboard(87);
+    var a = keyboard(65);
+    var s = keyboard(83);
+    var d = keyboard(68);
+
+    w.press = function() {
+      wPressed = true;
+    };
+
+    w.release = function() { 
+      wPressed = false;
+    };
+
+    a.press = function() {
+      aPressed = true;
+    };
+
+    a.release = function() { 
+      aPressed = false;
+    };
+
+    s.press = function() {
+      sPressed = true;
+    };
+
+    s.release = function() { 
+      sPressed = false;
+    };
+
+    d.press = function() {
+      dPressed = true;
+    };
+
+    d.release = function() { 
+      dPressed = false;
+    };
+
+    function keyboard(keyCode) {
+      var key = {};
+      key.code = keyCode;
+      key.isDown = false;
+      key.isUp = true;
+      key.press = undefined;
+      key.release = undefined;
+      //The `downHandler`
+      key.downHandler = function(event) {
+        if (event.keyCode === key.code) {
+          if (key.isUp && key.press) key.press();
+          key.isDown = true;
+          key.isUp = false;
+        }
+        event.preventDefault();
+      };
+
+      //The `upHandler`
+      key.upHandler = function(event) {
+        if (event.keyCode === key.code) {
+          if (key.isDown && key.release) key.release();
+          key.isDown = false;
+          key.isUp = true;
+        }
+        event.preventDefault();
+      };
+
+      //Attach event listeners
+      window.addEventListener(
+          "keydown", key.downHandler.bind(key), false
+          );
+      window.addEventListener(
+          "keyup", key.upHandler.bind(key), false
+          );
+      return key;
+    }
+  </script>
+ 
+  </body>
+</html>
