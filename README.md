@@ -1,5 +1,5 @@
-# catandmouse
+# getmicah.github.io
+My blog made with [jekyll](http://jekyllrb.com) and hosted with Github Pages.
 
-The point of this game is to stream and record all of the development and learning process for a project where we have very limited domain knowledge.
-
-This will be a video game where the goal is to stay alive for as long as possible, while you (the mouse) are being chased by cats.
+### License
+All this stuff is under the [MIT License](https://raw.githubusercontent.com/getmicah/getmicah.github.io/master/LICENSE)
