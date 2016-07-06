@@ -4,7 +4,8 @@ layout: default
 
 <div class="tag">
     <a class="tag__back" href="/">&lt;-- back</a>
-    <h1 class="tag__title">Post with {{ page.tag }} tag:</h1>
+    <p></p>
+    <h1 class="tag__title">Posts tagged {{ page.tag }}:</h1>
     <div class="tag__content">
         {% if site.tags[page.tag] %}
             {% for post in site.tags[page.tag] %}
