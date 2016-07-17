@@ -1,0 +1,17 @@
+<div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title"></h1>
+    <p class="post__date"></p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        
+    </div>
+
+    <p>
+      {{ jekyll.environment }}
+    </p>
+
+  {% if jekyll.environment == 'production' %}
+    {% include analytics.html %}
+  {% endif %}
+</div>
