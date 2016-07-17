@@ -8,6 +8,11 @@ description: I like coding
 google_verification: null
 
 
+# RSS 
+gems:
+  - jekyll-feed
+
+
 # File management
 include: [".htaccess"]
 exclude: ["README.md", "LICENSE"]
