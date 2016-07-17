@@ -29,10 +29,6 @@
         {{ content }}
     </div>
 
-    <p>
-      {{ jekyll.environment }}
-    </p>
-
   {% if jekyll.environment == 'production' %}
     {% include analytics.html %}
   {% endif %}
