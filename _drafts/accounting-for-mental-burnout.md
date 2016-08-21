@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Accounting for mental burnout
-tag: programming
 ---
 Programming is a peculiar field. We're neither an extreme for an engineering field, but it's hard to justify that what we do is art. We're problem solvers like many fields in engineering, but it's very difficult to qualitatively measure everything that we do just like in an artistic field.
 
