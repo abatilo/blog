@@ -22,4 +22,27 @@ The happy middle is to comment in places where decisions were made. Don't mistak
 
 One example of such a decision is any time you write code that branches. When you write an if statement, you're inherently making a commentary about the assumption of the state of the data you're working with. If you make a check for a list having more than 0 elements in it, you're doing so because you've accounted for the situation where you DON'T have more than 0 elements in it. Why might this happen? How does this affect the flow of your code?
 
-Another example is any time you extract code out into a method. 
+Another example is any time you extract code out into a method. If you've done such a thing, this is because you feel like the code you've extracted can be reusable in some way. What makes this code reusable? What are your expectations for how the code should be used?
+
+A great marker for needing to comment is if you had to rewrite some code because what was originally there did not behave correctly. This is an explicit sign that the original code had some incorrect assumptions, and you should write the comments to explain what the correct assumptions are.
+
+Now we know when to write comments. What do we put in them? Your comments should focus on explaining why code was written a certain way. I always find it silly when I see comments that are just telling me exactly what the code is doing, for example:
+
+```java
+// Checks that the list is not empty
+if (0 < exampleList.size) {
+  // Logic here
+}
+```
+
+That's great and all, but this comment is just clutter. It's not aiding at all in my ability to understand the code. Like previously mentioned, the comments should augment the code and help you understand the mental model that existed during the creation of the code.
+
+Also, in my opinion, you should never comment anything that is domain specific knowledge. The problem with doing this is that it's impossible to decide which specific instances you should comment. Do you comment all of them? 
+
+For example, in the Java programming language, using the foreach syntax is considered to be better. The code is more terse with less surface area for making a mistake. It can also result in a small performance gain because it only needs to calculate the upper bound of an array limit one time. On the Android mobile platform, it's advised to not use the foreach syntax because doing so will allocate an Iterator. There's overhead in that allocation, but more importantly that's a reference that will need to be cleaned up by the garbage collector. Allocating that memory has the potential to decrease the time before the next garbage collection cycle. This is bad because you really want to avoid the garbage collector since it'll likely affect the rendering performance of your application and you might drop frames while performing an animation.
+
+Should I be writing this explanation every time I choose to use a for loop? I don't think so. Domain specific comments would become too verbose and frequent.
+
+Lastly, don't comment like you're speaking to an idiot. Give the other people (and yourself) the respect. Comments that explain that a selection sort is O(n^2) is useless unless you're writing a school assignment. A mistake I used to make was trying to write comments specifically intended for someone who has never seen the code. I had an ideal that they could get started by just jumping in and the comments would explain everything. This simply doesn't work. You can't write out your entire mental model everywhere. Leave enough comments to help lead someone down the correct path of thought and with enough information to know where to go if they need to go up the mental model dependency graph.
+
+Thanks for reading.
