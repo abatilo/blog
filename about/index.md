@@ -12,6 +12,4 @@ In 2012, I started attending the University of Colorado at Colorado Springs for 
 
 In 2015, I grew an interest in machine learning and moved out of the cyber security space. During the summer of 2015 I joined a newly founded startup in home automation as an intern to help them create their cloud infrastructure. In the summer of 2016 I joined full time to work on the Android app used to communicate with our smart home product.
 
-I like to learn and consider myself at least average at it. I also like to write and consider myself at least average at it.
-
-Email me at AaronBatilo@gmail.com
+Email me at aaron@aaronbatilo.io
