@@ -1,11 +1,11 @@
 - title: about
-  url: http://stackoverflow.com/story/aaronbatilo
+  url: /about
+
+- title: contact/hire
+  url: mailto:aaron@aaronbatilo.io
 
 - title: github
   url: https://github.com/abatilo
-
-- title: linkedin
-  url: https://www.linkedin.com/in/abatilo
 
 - title: rss
   url: http://aaronbatilo.io/feed.xml
