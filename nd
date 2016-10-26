@@ -1,0 +1,12 @@
+#!/bin/sh
+DATE=`date +%Y-%m-%d`
+
+# If today's file already exists, just open it
+if [ -e daily/$DATE.txt ]; then
+  vi daily/$DATE.txt
+else
+# Otherwise grab the latest file and put it's contents into today's file
+  LATEST_FILE=`ls -t daily/ | head -n 1`
+  cat daily/$LATEST_FILE > daily/$DATE.txt
+  vi daily/$DATE.txt
+fi
