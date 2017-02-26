@@ -26,8 +26,8 @@ sass:
 
 
 # Markdown
-markdown: redcarpet
-redcarpet:
-  extension:
-    - fenced_code_blocks
-highlighter: pygments
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge
