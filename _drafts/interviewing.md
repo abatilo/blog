@@ -15,3 +15,6 @@ In what ways can someone provide value? Well, maybe you work on a feature that g
 Interviewing is too emotional. If you interview with someone on a bad day, they're going to fixate on reasons why you couldn't possibly provide value. If you interview with someone whom with you have a lot in common, then they're going to inherently believe that you could provide value, because they think they provide value. Of course they probably provide value, but they're attributing the wrong characteristics to why you could provide value. It doesn't matter if you both like the same TV shows, or you guys come from the same small town. Those factors will not help you provide value, but they will make the interviewer like you more, and they'll make them want to find reasons to hire you.
 
 Interviewing is too blind. Writing software is so much more than just the act of writing code. If you want to write software professionally, you're talking about planning, debugging, writing, testing, bug reporting, all sorts of things. But most people will only interview on two things: culture fit, and technical ability.  
+
+- Resume screenings
+- Answering personality questions
