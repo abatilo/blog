@@ -1,4 +1,5 @@
 ---
-layout: Making exceptions useful
-title: New post
+layout: post
+title: Making exceptions useful
 ---
+
