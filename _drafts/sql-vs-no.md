@@ -13,7 +13,7 @@ SQL databases are great for working with complex constraints across your data. Y
 
 NoSQL databases always seem to abuse one of the core principles of a SQL database in favor of something else. SQL databases tend to follow the ACID princples. Atomicity, Consistency, Isolation, and Durability. For example, MongoDB will drop atomicity of operations in favor of faster writes with shorter locks. Dropping consistency will allow Cassandra databases to scale horizontally more easily, as you are giving up guaranteed replication across all the databases. Depending on which server you get, you might get different results.
 
-
+- ACID vs CAP
 
 In practice, SQL and NoSQL databases will always solve different problems. Neither one is necessarily any better than the other, it's all about the tradeoffs and the specific problem that you're trying to solve. NoSQL databases have the reputation of being more scalable and more friendly for large datasets, but in reality, SQL databases can handle large datasets and scale well too. It just depends on the types of operations you want and what kind of tradeoffs you're willing tomake.
 
