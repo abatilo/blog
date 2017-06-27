@@ -63,3 +63,5 @@ Then I thought maybe I could specialize in mobile development. Mobile developmen
 
 What else have you done?
 I've had to do full stack development, and some embedded like C++ development. Getting really good at C++ development is nice for doing the graphics in game engine development. My mind likes having to understand the intricacies of writing C++ code where you have to do a lot of things for yourself. Not a lot is taken care of for you. I use vim as my development environment too because I don't always like an IDE to do everything for me.
+
+What do you want to learn?
