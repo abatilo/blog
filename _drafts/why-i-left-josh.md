@@ -11,6 +11,8 @@ When the semester came about, up until January of 2016, I continued on Flask/ful
 
 In February of 2016, I was repurposed to help work on our Android application. At the time, we had a full time iOS developer, but the Android developer was a part time contractor. So I was working with him in order to get more of the Android work caught up and done. This lasted until May of 2016, aka the end of the semester and when I finished at school.
 
+Fast forward to school finishing in the middle of May of 2016 and I become the only full time Android developer. This is where things start to really rocket.
+
 May 2016 -> January 2017
 - Android developer
 - RxJava/RxAndroid, reactive programming
