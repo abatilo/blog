@@ -9,8 +9,7 @@ I joined in June 2015 as an intern working full time, up until August 2015 when 
 
 When the semester came about, up until January of 2016, I continued on Flask/full-stack development but I was doing it at reduced hours. At this point most of my work involved developing the personality of our chat bot system using a domain specific language which was built. I would also build internal tools to help us with reporting and automation of other processes.
 
-February 2016 -> May 2016
-- Android developer. Helped our part time contractor
+In February of 2016, I was repurposed to help work on our Android application. At the time, we had a full time iOS developer, but the Android developer was a part time contractor. So I was working with him in order to get more of the Android work caught up and done. This lasted until May of 2016, aka the end of the semester and when I finished at school.
 
 May 2016 -> January 2017
 - Android developer
