@@ -1,11 +1,14 @@
-- title: about
-  url: /about
-
 - title: contact
   url: mailto:aaron@aaronbatilo.io
 
+- title: linkedin
+  url: https://www.linkedin.com/in/abatilo/
+
 - title: github
   url: https://github.com/abatilo
+
+- title: twitter
+  url: https://twitter.com/aaronbatilo
 
 - title: rss
   url: http://aaronbatilo.io/feed.xml
