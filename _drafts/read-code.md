@@ -9,3 +9,4 @@ title: How to get better at reading code
 - Learn to develop a mental model
 - Guessing means you don't understand it
 - Understand everything in small chunks at a time. TAKE TIME TO LET IT SIT. This is anecdotal, but cramming too much doesn't really give you any real understanding
+- Put it together slowly, like a graph or puzzle
