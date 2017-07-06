@@ -15,8 +15,12 @@ Debugging is the process of determine which part of your code is causing an unin
 
 Perhaps more important, are steps that you can take for trying to find the offending code. Being able to dissect a code base is a great measure for how well you know it. Fixing a bug can be a great way to become familiar with how all of the pieces fall together.
 
-- Writing good documentation
-- Weighing possible approaches
-- Being a product programmer
-- How to take feedback?
-- https://github.com/braydie/HowToBeAProgrammer
+# Writing good documentation
+# Weighing possible approaches
+# Being a product programmer
+# How to take feedback?
+
+# Closing
+If you're a new developer, be it from a university or from a bootcamp, you should absolutely read _How To Be A Programmer_ which you can buy online or read for free here: [How To Be a Programmer](https://github.com/braydie/HowToBeAProgrammer).
+
+This book goes far deeper into the topics that you should absolutely know, and it's one of the most important books that I think every developer should read
