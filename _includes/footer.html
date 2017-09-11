@@ -1,0 +1,7 @@
+<div class="footer">
+    {% for item in site.data.navigation %}
+    <div>
+      <a href="{{ item.url }}">{{ item.title }}</a>
+    </div>
+    {% endfor %}
+</div>
