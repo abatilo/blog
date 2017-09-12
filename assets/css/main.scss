@@ -1,8 +1,6 @@
 ---
 ---
 
-@import "reset";
-
 body {
   font-family: sans-serif;
 }
@@ -21,20 +19,18 @@ a {
 }
 
 .blog {
-  div {
+  .lineItem {
+    padding: 2px 8px;
     div {
       display: inline-block;
-      width: 80px;
-      @media (max-width: 600px) {
+      width: 6em;
+      @media (max-width: 500px) {
         display: block;
       }
     }
-    a {
-      @media (max-width: 600px) {
-        padding: 2px 8px;
-      }
+    @media (max-width: 500px) {
+      padding: 10px 8px;
     }
-    padding: 2px 8px;
   }
 }
 
@@ -73,15 +69,15 @@ a {
 
 .footer {
   padding-top: 20px;
-  width: 100%;
   white-space: nowrap;
   div {
     text-align: center;
     display: inline-block;
     width: 25%;
-    @media (max-width: 600px) {
+    @media (max-width: 500px) {
       margin: auto;
       display: block;
+      padding-bottom: 12px;
     }
   }
 }
