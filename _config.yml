@@ -2,8 +2,8 @@
 permalink: /blog/:title
 
 # My variables
-name: Aaron's blog
-description: I like coding
+name: Aaron Batilo's blog
+description: Stories of software development
 
 # RSS
 gems:
