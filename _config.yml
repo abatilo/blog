@@ -6,7 +6,7 @@ name: Aaron's blog
 description: Software engineering in story form
 
 # RSS
-gems:
+plugins:
   - jekyll-feed
   - jekyll-gist
 
