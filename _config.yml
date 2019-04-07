@@ -9,10 +9,11 @@ description: Software engineering in story form
 plugins:
   - jekyll-feed
   - jekyll-gist
+  - octopress-minify-html
 
 # File management
 include: [".htaccess"]
-exclude: ["README.md", "LICENSE","new_draft.sh","publish_draft.sh","run_drafts.sh", "Gemfile", "Gemfile.lock"]
+exclude: ["README.md", "LICENSE","new_draft.sh","publish_draft.sh","run_drafts.sh", "Gemfile", "Gemfile.lock", "Dockerfile", "Jenkinsfile", "version.txt", "nginx.conf"]
 
 # Sass
 sass:
