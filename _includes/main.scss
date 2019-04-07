@@ -63,16 +63,15 @@ a {
 }
 
 .footer {
+  @media (max-width: 500px) {
+    display: block;
+  }
+
   padding-top: 20px;
   white-space: nowrap;
+  display: flex;
   div {
     text-align: center;
-    display: inline-block;
-    width: 33%;
-    @media (max-width: 500px) {
-      margin: auto;
-      display: block;
-      padding-bottom: 12px;
-    }
+    flex: 1;
   }
 }

@@ -1,8 +1,11 @@
 - title: contact
-  url: mailto:aaron@aaronbatilo.io
+  url: mailto:aaron@aaronbatilo.dev
+
+- title: resume
+  url: http://www.aaronbatilo.dev/resume
 
 - title: linkedin
   url: https://www.linkedin.com/in/abatilo/
 
 - title: rss
-  url: http://aaronbatilo.io/feed.xml
+  url: http://www.aaronbatilo.dev/feed.xml
