@@ -1,0 +1,113 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: spinnaker
+  labels:
+    app: blog
+  name: blog
+spec:
+  replicas: 3
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: blog
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      name: blog
+      labels:
+        app: blog
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - blog
+              topologyKey: "kubernetes.io/hostname"
+      containers:
+        - image: registry.public.abatilo.cloud/blog
+          name: blog
+          ports:
+            - containerPort: 80
+              name: http
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 25m
+              memory: 32Mi
+            requests:
+              cpu: 25m
+              memory: 32Mi
+      imagePullSecrets:
+        - name: abatilo-registry
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: spinnaker
+  name: blog
+spec:
+  selector:
+    app: blog
+  ports:
+  - name: web
+    port: 80
+    targetPort: 80
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: spinnaker
+  name: blog
+  labels:
+    traefikSelector: abatiloservices
+    app: blog
+spec:
+  rules:
+  - host: www.aaronbatilo.dev
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: blog
+          servicePort: web
+---
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: blog
+  namespace: spinnaker
+spec:
+  maxReplicas: 10
+  minReplicas: 3
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: blog
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: 75
+---
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: blog
+  namespace: spinnaker
+spec:
+  selector:
+    matchLabels:
+      app: blog
+  maxUnavailable: 1

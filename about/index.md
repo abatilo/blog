@@ -1,0 +1,59 @@
+---
+layout: about
+---
+# My manifesto
+
+**I am a life long learner.** I'm always looking to figure out how to improve. I always
+operate with the goal to have my organic reputation to being the person who "works the
+hardest towards self improvement". Notice, I don't want to be the best or fastest. I
+don't want to work the most hours or even improve the most. I just want people to know,
+recognize, and acknowledge that I put in the most effort and attention into becoming
+better.
+
+**I am operations focused.** While my primary objective may be to write code for solving
+product problems, I've learned over the years that you could write perfect code, but
+without a solid infrastructure behind it, you'll never be able to scale out your system.
+
+I run my own [Kubernetes](https://github.com/kubernetes/kubernetes) cluster in AWS,
+built through [kops](https://github.com/kubernetes/kops). That's exactly how I run this
+blog. The blog itself is an nginx container, hosted on my very own
+[docker-registry](https://github.com/helm/charts/tree/master/stable/docker-registry)
+which is backed by Amazon S3. The container itself is built with a GH Action and is
+deployed via a self hosted [spinnaker](https://www.spinnaker.io/) pipeline. Everything
+is served using the [traefik](https://traefik.io/) ingress controller, pointed to from
+an ELB.
+
+**I am an automation addict.** If I ever have to do something repeatedly, I will spend time to
+automate it away. If it has to be done off work hours, so be it. Automating my own tasks
+and expectations will free me up to do other interesting work. In my opinion, it's the
+only way to scale as a human being. If something is inconveniencing me, I will automate
+it.
+
+**I am not a hero.** I don't believe in heroics. Working crazy hours or being known as
+the person to always respond first to an on-call pager? I fully disagree with all of
+these scenarios. Software development should be sustainable. Rushing hours or being in
+fear of getting paged won't lend itself to my happiness.
+
+**I am data driven.** I use both [WakaTime](https://wakatime.com/) and
+[RescueTime](https://www.rescuetime.com/) to help me understand where my time is going.
+I believe in the [quantified self](https://quantifiedself.com/) movement and strive to
+quantify everything I do. I have sleep trackers, fitness trackers, etc.
+
+**I am egoless.** My concern is never that I am right. I have no problems admitting I am
+wrong, and in fact I do it openly and freely. My concern is that we're making the right
+decisions **as a team**. If I'm passionate about a topic, you'll know it, but I'm only
+trying to make sure that we're considering everything that we can.
+
+**I am transparent.** There are no secrets with me. I don't want to spend my time dealing
+with that. I want to spend my time being engaged and thinking ahead. I am what you see,
+and you'll always know exactly how I feel.
+
+**I am simple.** I use [vim](https://www.vim.org/) and
+[tmux](https://github.com/tmux/tmux) for all of my development. I write code exclusively
+on a command line. I don't like IDEs. I think they hide away too much. I try my best to
+list out my tools on my [vimrc](https://github.com/abatilo/vimrc) repository. This
+repository has admittedly expanded to housing my dotfiles as well.
+
+If you've actually read my profile, and you'd like to talk, [click here to send me an
+email](mailto:aaronbatilo+blog@gmail.com)
+If you email me there, I promise that I'll respond in a timely manner.
