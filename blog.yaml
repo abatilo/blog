@@ -36,7 +36,7 @@ spec:
                   - blog
               topologyKey: "kubernetes.io/hostname"
       containers:
-        - image: registry.public.abatilo.cloud/blog
+        - image: registry.aaronbatilo.dev/blog
           name: blog
           ports:
             - containerPort: 80
