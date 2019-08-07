@@ -1,4 +1,4 @@
-workflow "Publish new resume" {
+workflow "Publish new version" {
   on = "push"
   resolves = ["Push container"]
 }
