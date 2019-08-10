@@ -1,7 +1,18 @@
 ---
 layout: about
 ---
-# My manifesto
+# Who am I?
+My name is Aaron Batilo. I'm fascinated by the obscure and I invest time in what
+interests me. I've been a [competitive
+yo-yoer](https://www.youtube.com/watch?v=sy6fglH3Uww). I've been internationally ranked
+in the top 2% of StarCraft 2 players (serving for the queen of blades). I was a [budding
+competitive pool
+player](https://www.napaleagues.com/stats.php?playerSelected=Y&playerID=10020200).
+
+**I am competitive.** I like to be the best. I want to be better than I am. But
+something that I want to explicitly point out is that I'm not interested in becoming the
+best by bringing others down. I thoroughly believe that by leveraging and collaborating
+with those around me, that it's the most efficient way to improve.
 
 **I am a life long learner.** I'm always looking to figure out how to improve. I always
 operate with the goal to have my organic reputation to being the person who "works the
