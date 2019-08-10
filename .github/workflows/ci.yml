@@ -16,4 +16,3 @@ jobs:
         REGISTRY_PASS: ${{ secrets.REGISTRY_PASS }}
         REGISTRY_URL: ${{ secrets.REGISTRY_URL }}
         REGISTRY_USER: ${{ secrets.REGISTRY_USER }}
-      args: push
