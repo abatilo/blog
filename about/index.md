@@ -9,6 +9,31 @@ in the top 2% of StarCraft 2 players (serving for the queen of blades). I was a 
 competitive pool
 player](https://www.napaleagues.com/stats.php?playerSelected=Y&playerID=10020200).
 
+I got into computer science-y stuff first when I got really into
+[MapleStory](http://maplestory.nexon.net/). Someone released an [alternative
+backend](https://mapleref.fandom.com/wiki/OdinMS) for the game, known as a private
+server. I took the code and followed tutorials to run my own copy. I got really into it
+and started learning about code to figure out how all the pieces worked together. I went
+back to playing the main game but focused on hacking and automating the game. In high
+school [I interned with Northrop Grumman](https://www.youtube.com/watch?v=37-P7VbJb34)
+for a few back to back years. I got a clearance and kept interning into college doing
+some Linux system administration work. I got really into AI and left Northrop Grumman to
+intern with
+[Josh.ai](https://medium.com/@joshdotai/i-made-a-computer-pretend-to-be-a-computer-that-s-pretending-to-be-a-human-here-s-what-happened-128173751967).
+I dropped out of college and worked at Josh.ai full time doing our Android app, worked
+on our NLP, worked on the backend, and worked on device integrations (it was a really
+small company at the time). I left Josh.ai and worked for FullContact where I caught the
+operations bug. I helped migrate existing services to run on Kubernetes and [I helped
+build ML
+capabilities](https://www.fullcontact.com/blog/experimentation-leads-innovation-machine-learning-fullcontact/)
+into one of our services. I left FullContact to join Conga where I joined a greenfield
+team to build a new ML based contract analyzer. We built it on Kubernetes and I focused
+on CI/CD and automating data ingest and model building. When our lead left, I got
+promoted to run the team and we [launched that
+product](https://www.businesswire.com/news/home/20190423005393/en/Conga%C2%AE-Unveils-New-Artificial-Intelligence-Engine).
+After product launch, I helped other teams become cloud native. I left Conga to join
+[iStreamPlanet](https://istreamplanet.com/).
+
 **I am competitive.** I like to be the best. I want to be better than I am. But
 something that I want to explicitly point out is that I'm not interested in becoming the
 best by bringing others down. I thoroughly believe that by leveraging and collaborating
