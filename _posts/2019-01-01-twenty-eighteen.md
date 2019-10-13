@@ -30,9 +30,9 @@ In no particular order:
 - [ ] Write a non-trivial (as in, not just a tutorial) application in either Erlang, Haskell, or Elixir? I want more experience in a purely functional language. I still don't understand it as much as I think I should
 - [ ] One of these non-trivial applications can/should be a pseudo clone of the LaunchDarkly product. I'm not trying to compete with them, but I really like what they do
 - [ ] Write at least 4 other blog posts for 2019. One for each quarter of the year. Not necessarily an overview of the quarter, but 4 good blog posts seems like a nice goal
-- [ ] Go back to being an individual contributor. Management might be good for me one day, but I'm just not done being an IC
-- [ ] Standup and administrate my own Kubernetes cluster, even if it's just using EKS/GKE/etc
-- [ ] Release some "product" that has end to end functionality. That means user sign up and login. I don't even need any users, but it's just another (incremental) step towards having a lifestyle business
+- [X] Go back to being an individual contributor. Management might be good for me one day, but I'm just not done being an IC
+- [X] Standup and administrate my own Kubernetes cluster, even if it's just using EKS/GKE/etc
+- [X] Release some "product" that has end to end functionality. That means user sign up and login. I don't even need any users, but it's just another (incremental) step towards having a lifestyle business
 - [ ] Read 30 non-fiction books. I read 15 last year, and I didn't discover my book reading super power until the second half of the year. If I can read 30 books, I'd be really happy.
 - [ ] Pending it's completion, one of those books should be Crafting Interpreters by Bob Nystrom. I just like learning about programming languages
 - [ ] Get promoted beyond senior software engineer. Getting promotions for back to back years is a stretch but that doesn't mean I can't make it a goal.
