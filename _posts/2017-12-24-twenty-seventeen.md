@@ -1,6 +1,7 @@
 ---
 layout: post
 title: What happened in my 2017, and refocusing for 2018
+categories: [Blog]
 ---
 First and foremost, I've deleted all my blog posts that came before this one. I did this because after re-reading most of my blog posts, it was clear to me that I didn't really understand what I wanted to get out of this blog. I had posts that were kind of all over the place. Some posts were absolutely written just for the sake of writing them which makes absolutely no sense because I don't advertise or share my blog anywhere. I put the link to my website into several profiles, but I never really expect anyone to read anything on here, yet I was forcefully writing. In the new year, I'm going to be changing that. For the people who know me personally, they know that I'm more of a story teller. I tried to write my blog posts in a reference style like the blog posts by [Dan Luu](http://danluu.com/), but it just didn't come out right. Instead what I want to do is tell stories that are all built from my experiences as a software engineer. Stories of triumph, stories of mistakes, etc. With all that being said, it's time for me to tell the story of 2017.
 

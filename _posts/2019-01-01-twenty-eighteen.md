@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Reviewing 2018
+categories: [Blog]
 ---
 I actually went an entire year without writing a single blog post, so that's a little embarassing. The year of 2018 was significantly more eventful than I ever would have thought possible. Let's recap a little. When I wrote my blog post for 2017, it was the end of December. I had been at FullContact for about 6 months, but a storm was brewing. In early December, I started talking to a recruiter for a company named Conga. Let's call her Lindsay... mostly because her name is actually Lindsay. I was actually fairly happy at FC, but there was something that didn't sit well with me. People in sales were getting let go pretty much left and right. It was the same with people in customer success. In hindsight, I've learned that sales people not hitting their numbers, and then being let go, is actually a very normal thing. I wasn't used to it at the time, and so that made me really worried. I felt significantly inferior to a lot of my co-workers, so that made me think that I was going to be let go fairly soon. Because of this, and the combined fact that Lindsay had a truly delightful and personalized message to me in LinkedIn, I replied and started the interview process with Conga.
 

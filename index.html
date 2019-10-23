@@ -3,10 +3,20 @@ layout: default
 ---
 
 <div class="blog">
-  {% for post in site.posts %}
-  <div class="lineItem">
-    <div>{{ post.date | date: '%b %Y' }}</div><a href="{{ post.url }}">{{ post.title }}</a>
-  </div>
+  {% for category in site.categories %}
+  <h3>{{ category[0] }}</h3>
+    {% if category[0] == "Knowledge Base" %}
+    <p>
+      The idea to start a personal knowledge base was inspired by
+      <a href="https://news.ycombinator.com/item?id=21311156">this comment</a> on Hacker News.
+    </p>
+    {% endif %}
+    {% for post in category[1] %}
+    <div class="lineItem">
+      <div>{{ post.date | date: '%b %Y' }}</div><a href="{{ post.url }}">{{ post.title }}</a>
+    </div>
+    {% endfor %}
   {% endfor %}
 </div>
+<hr>
 {% include footer.html %}
