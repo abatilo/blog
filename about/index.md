@@ -59,6 +59,12 @@ deployed via a self hosted [spinnaker](https://www.spinnaker.io/) pipeline. Ever
 is served using the [traefik](https://traefik.io/) ingress controller, pointed to from
 an ELB.
 
+**I am focused on human scalability.** I keep human scalable solutions in the front of
+my mind. This can mean linters, static analaysis, or other tooling. I will help
+consolidate the local development stories on the teams that I work with, and I will help
+the team understand why this is a productivity booster both for individuals and for the
+organization.
+
 **I am an automation addict.** If I ever have to do something repeatedly, I will spend time to
 automate it away. If it has to be done off work hours, so be it. Automating my own tasks
 and expectations will free me up to do other interesting work. In my opinion, it's the
