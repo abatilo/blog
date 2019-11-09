@@ -52,12 +52,7 @@ without a solid infrastructure behind it, you'll never be able to scale out your
 
 I run my own [Kubernetes](https://github.com/kubernetes/kubernetes) cluster in AWS,
 built through [kops](https://github.com/kubernetes/kops). That's exactly how I run this
-blog. The blog itself is an nginx container, hosted on my very own
-[docker-registry](https://github.com/helm/charts/tree/master/stable/docker-registry)
-which is backed by Amazon S3. The container itself is built with a GH Action and is
-deployed via a self hosted [spinnaker](https://www.spinnaker.io/) pipeline. Everything
-is served using the [traefik](https://traefik.io/) ingress controller, pointed to from
-an ELB.
+blog.
 
 **I am focused on human scalability.** I keep human scalable solutions in the front of
 my mind. This can mean linters, static analaysis, or other tooling. I will help
