@@ -1,0 +1,34 @@
+version: '1.0'
+steps:
+  clone:
+    title: Clone
+    type: git-clone
+    arguments:
+      repo: 'abatilo/blog'
+      git: github
+      revision: 'master'
+  version:
+    title: Get Version
+    type: freestyle
+    arguments:
+      image: 'alpine:latest'
+      working_directory: 'blog/'
+      commands:
+        - cf_export VERSION=$(cat version.txt)
+  build:
+    title: Build
+    type: build
+    image_name: 'abatilo/blog'
+    working_directory: 'blog'
+    tag: ${{VERSION}}
+  install:
+    image: 'codefresh/cfstep-helm:2.9.1'
+    title: Install
+    environment:
+      - CHART_REF=blog/blog
+      - RELEASE_NAME=blog
+      - KUBE_CONTEXT=chopper
+      - NAMESPACE=applications
+      - VALUESFILE_prod='blog/blog/values.yaml'
+      - VALUE_image_repository='r.cfcr.io/abatilo/abatilo/blog'
+      - VALUE_image_tag='${{VERSION}}'
