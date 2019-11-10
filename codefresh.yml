@@ -41,6 +41,7 @@ steps:
     tag: ${{VERSION}}
   install_25:
     stage: canary25
+    fail_fast: false
     image: 'codefresh/cfstep-helm:2.9.1'
     title: Install at 25%
     environment:
@@ -57,6 +58,7 @@ steps:
   timeout_25:
     stage: canary25
     type: pending-approval
+    fail_fast: false
     title: Waiting with 25%
     description: Step description
     timeout:
@@ -64,6 +66,7 @@ steps:
       finalState: approved
   install_50:
     stage: canary50
+    fail_fast: false
     image: 'codefresh/cfstep-helm:2.9.1'
     title: Install at 50%
     environment:
@@ -79,6 +82,7 @@ steps:
       - VALUE_canary_tag='${{VERSION}}'
   timeout_50:
     stage: canary50
+    fail_fast: false
     type: pending-approval
     title: Waiting at 50%
     description: Step description
@@ -87,6 +91,7 @@ steps:
       finalState: approved
   install_75:
     stage: canary75
+    fail_fast: false
     image: 'codefresh/cfstep-helm:2.9.1'
     title: Install at 75%
     environment:
@@ -102,6 +107,7 @@ steps:
       - VALUE_canary_tag='${{VERSION}}'
   timeout_75:
     stage: canary75
+    fail_fast: false
     type: pending-approval
     title: Waiting at 75%
     description: Step description
@@ -119,7 +125,32 @@ steps:
       - NAMESPACE=applications
       - VALUESFILE_prod='blog/blog/values.yaml'
       - VALUE_image_repository='r.cfcr.io/abatilo/abatilo/blog'
+      - VALUE_image_tag='${{VERSION}}'
+      - VALUE_canary_enabled=false
+    when:
+      condition:
+        all:
+          canary25Approved: steps.canary25.result == 'approved'
+          canary50Approved: steps.canary50.result == 'approved'
+          canary75Approved: steps.canary75.result == 'approved'
+  revert:
+    stage: release
+    image: 'codefresh/cfstep-helm:2.9.1'
+    title: Revert
+    environment:
+      - CHART_REF=blog/blog
+      - RELEASE_NAME=blog
+      - KUBE_CONTEXT=chopper
+      - NAMESPACE=applications
+      - VALUESFILE_prod='blog/blog/values.yaml'
+      - VALUE_image_repository='r.cfcr.io/abatilo/abatilo/blog'
       - VALUE_image_tag='${{PREVIOUS_VERSION}}'
       - VALUE_canary_enabled=false
       - VALUE_canary_percentage=100
       - VALUE_canary_tag='${{VERSION}}'
+    when:
+      condition:
+        any:
+          canary25Approved: steps.canary25.result != 'approved'
+          canary50Approved: steps.canary50.result != 'approved'
+          canary75Approved: steps.canary75.result != 'approved'
