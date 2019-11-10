@@ -1,9 +1,9 @@
 version: '1.0'
 stages:
   - build
-  - canary25
-  - canary50
-  - canary75
+  - timeout_25
+  - timeout_50
+  - timeout_75
   - release
 steps:
   clone:
@@ -40,7 +40,7 @@ steps:
     working_directory: 'blog'
     tag: ${{VERSION}}
   install_25:
-    stage: canary25
+    stage: timeout_25
     fail_fast: false
     image: 'codefresh/cfstep-helm:2.9.1'
     title: Install at 25%
@@ -56,7 +56,7 @@ steps:
       - VALUE_canary_percentage=25
       - VALUE_canary_tag='${{VERSION}}'
   timeout_25:
-    stage: canary25
+    stage: timeout_25
     type: pending-approval
     fail_fast: false
     title: Waiting with 25%
@@ -65,7 +65,7 @@ steps:
       duration: 0.005
       finalState: approved
   install_50:
-    stage: canary50
+    stage: timeout_50
     fail_fast: false
     image: 'codefresh/cfstep-helm:2.9.1'
     title: Install at 50%
@@ -80,8 +80,12 @@ steps:
       - VALUE_canary_enabled=true
       - VALUE_canary_percentage=50
       - VALUE_canary_tag='${{VERSION}}'
+    when:
+      condition:
+        all:
+          timeout_25Approved: steps.timeout_25.result == 'approved'
   timeout_50:
-    stage: canary50
+    stage: timeout_50
     fail_fast: false
     type: pending-approval
     title: Waiting at 50%
@@ -89,8 +93,12 @@ steps:
     timeout:
       duration: 0.005
       finalState: approved
+    when:
+      condition:
+        all:
+          timeout_25Approved: steps.timeout_25.result == 'approved'
   install_75:
-    stage: canary75
+    stage: timeout_75
     fail_fast: false
     image: 'codefresh/cfstep-helm:2.9.1'
     title: Install at 75%
@@ -105,8 +113,13 @@ steps:
       - VALUE_canary_enabled=true
       - VALUE_canary_percentage=75
       - VALUE_canary_tag='${{VERSION}}'
+    when:
+      condition:
+        all:
+          timeout_25Approved: steps.timeout_25.result == 'approved'
+          timeout_50Approved: steps.timeout_50.result == 'approved'
   timeout_75:
-    stage: canary75
+    stage: timeout_75
     fail_fast: false
     type: pending-approval
     title: Waiting at 75%
@@ -114,6 +127,11 @@ steps:
     timeout:
       duration: 0.005
       finalState: approved
+    when:
+      condition:
+        all:
+          timeout_25Approved: steps.timeout_25.result == 'approved'
+          timeout_50Approved: steps.timeout_50.result == 'approved'
   install_100:
     stage: release
     image: 'codefresh/cfstep-helm:2.9.1'
@@ -130,9 +148,9 @@ steps:
     when:
       condition:
         all:
-          canary25Approved: steps.canary25.result == 'approved'
-          canary50Approved: steps.canary50.result == 'approved'
-          canary75Approved: steps.canary75.result == 'approved'
+          timeout_25Approved: steps.timeout_25.result == 'approved'
+          timeout_50Approved: steps.timeout_50.result == 'approved'
+          timeout_75Approved: steps.timeout_75.result == 'approved'
   revert:
     stage: release
     image: 'codefresh/cfstep-helm:2.9.1'
@@ -151,6 +169,6 @@ steps:
     when:
       condition:
         any:
-          canary25Approved: steps.canary25.result != 'approved'
-          canary50Approved: steps.canary50.result != 'approved'
-          canary75Approved: steps.canary75.result != 'approved'
+          timeout_25Approved: steps.timeout_25.result != 'approved'
+          timeout_50Approved: steps.timeout_50.result != 'approved'
+          timeout_75Approved: steps.timeout_75.result != 'approved'
