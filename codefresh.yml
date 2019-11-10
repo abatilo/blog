@@ -7,6 +7,14 @@ steps:
       repo: 'abatilo/blog'
       git: github
       revision: 'master'
+  previous_version:
+    title: Get Previous Version
+    type: freestyle
+    arguments:
+      image: 'codefresh/kubectl:latest'
+      working_directory: 'blog/'
+      commands:
+        - cf_export PREVIOUS_VERSION=$(kubectl -n applications get deployment blog -o jsonpath='{.spec.template.spec.containers[0].image}' | cut -d':' -f2)
   version:
     title: Get Version
     type: freestyle
@@ -31,4 +39,6 @@ steps:
       - NAMESPACE=applications
       - VALUESFILE_prod='blog/blog/values.yaml'
       - VALUE_image_repository='r.cfcr.io/abatilo/abatilo/blog'
-      - VALUE_image_tag='${{VERSION}}'
+      - VALUE_image_tag='${{PREVIOUS_VERSION}}'
+      - VALUE_canary_enabled=true
+      - VALUE_canary_tag='${{VERSION}}'

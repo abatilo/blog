@@ -1,4 +1,11 @@
 replicaCount: 3
+pdb:
+  enabled: true
+
+canary:
+  enabled: false
+  percentage: 50
+  tag: invalid
 
 image:
   repository: registry.aaronbatilo.dev/blog

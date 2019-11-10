@@ -1,5 +1,7 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "blog.fullname" . -}}
+{{- $canaryEnabled := .Values.canary.enabled -}}
+{{- $canaryPercentage := .Values.canary.percentage -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -9,6 +11,11 @@ metadata:
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
+    {{- if $canaryEnabled }}
+    traefik.ingress.kubernetes.io/service-weights: |
+      {{ $fullName }}-canary: {{ $canaryPercentage }}%
+      {{ $fullName }}: {{ sub 100 $canaryPercentage }}%
+    {{- end }}
   {{- end }}
 spec:
 {{- if .Values.ingress.tls }}
@@ -31,6 +38,12 @@ spec:
             backend:
               serviceName: {{ $fullName }}
               servicePort: http
+          {{- if $canaryEnabled }}
+          - path: {{ . }}
+            backend:
+              serviceName: {{ $fullName }}-canary
+              servicePort: http
+          {{- end }}
         {{- end }}
   {{- end }}
 {{- end }}
