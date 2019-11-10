@@ -42,7 +42,7 @@ steps:
   install_25:
     stage: canary25
     image: 'codefresh/cfstep-helm:2.9.1'
-    title: Install
+    title: Install at 25%
     environment:
       - CHART_REF=blog/blog
       - RELEASE_NAME=blog
@@ -57,15 +57,15 @@ steps:
   timeout_25:
     stage: canary25
     type: pending-approval
-    title: Step Title
+    title: Waiting with 25%
     description: Step description
     timeout:
-      duration: 0.02
+      duration: 0.005
       finalState: approved
   install_50:
     stage: canary50
     image: 'codefresh/cfstep-helm:2.9.1'
-    title: Install
+    title: Install at 50%
     environment:
       - CHART_REF=blog/blog
       - RELEASE_NAME=blog
@@ -80,15 +80,15 @@ steps:
   timeout_50:
     stage: canary50
     type: pending-approval
-    title: Step Title
+    title: Waiting at 50%
     description: Step description
     timeout:
-      duration: 0.02
+      duration: 0.005
       finalState: approved
   install_75:
     stage: canary75
     image: 'codefresh/cfstep-helm:2.9.1'
-    title: Install
+    title: Install at 75%
     environment:
       - CHART_REF=blog/blog
       - RELEASE_NAME=blog
@@ -103,15 +103,15 @@ steps:
   timeout_75:
     stage: canary75
     type: pending-approval
-    title: Step Title
+    title: Waiting at 75%
     description: Step description
     timeout:
-      duration: 0.02
+      duration: 0.005
       finalState: approved
   install_100:
     stage: release
     image: 'codefresh/cfstep-helm:2.9.1'
-    title: Install
+    title: Install at 100%
     environment:
       - CHART_REF=blog/blog
       - RELEASE_NAME=blog
