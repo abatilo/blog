@@ -14,7 +14,7 @@ steps:
       image: 'codefresh/kubectl:latest'
       working_directory: 'blog/'
       commands:
-        - cf_export PREVIOUS_VERSION=$(kubectl -n applications get deployment blog -o jsonpath='{.spec.template.spec.containers[0].image}' | cut -d':' -f2)
+        - cf_export PREVIOUS_VERSION=$(kubectl --context chopper -n applications get deployment blog -o jsonpath='{.spec.template.spec.containers[0].image}' | cut -d':' -f2)
   version:
     title: Get Version
     type: freestyle
