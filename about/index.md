@@ -34,6 +34,24 @@ product](https://www.businesswire.com/news/home/20190423005393/en/Conga%C2%AE-Un
 After product launch, I helped other teams become cloud native. I left Conga to join
 [iStreamPlanet](https://istreamplanet.com/).
 
+I've made my career out of teaching people how to efficiently use Amazon Web
+Services and Kubernetes. I believe in optimizing what I like to call the
+developer experience. It's one thing for me to be a capable developer or
+operations engineer, but it's much more impactful if I can improve the
+productivity of everyone in my engineering organization.
+
+This comes through building sophisticated CI/CD pipelines that let you develop
+fearlessly, building cross platform and repeatable local development
+environments, and much more.
+
+**I am operations focused.** While my primary objective may be to write code for solving
+product problems, I've learned over the years that you could write perfect code, but
+without a solid infrastructure behind it, you'll never be able to scale out your system.
+
+I run my own [Kubernetes](https://github.com/kubernetes/kubernetes) cluster in AWS,
+built through [kops](https://github.com/kubernetes/kops). That's exactly how I run this
+blog.
+
 **I am competitive.** I like to be the best. I want to be better than I am. But
 something that I want to explicitly point out is that I'm not interested in becoming the
 best by bringing others down. I thoroughly believe that by leveraging and collaborating
@@ -45,14 +63,6 @@ hardest towards self improvement". Notice, I don't want to be the best or fastes
 don't want to work the most hours or even improve the most. I just want people to know,
 recognize, and acknowledge that I put in the most effort and attention into becoming
 better.
-
-**I am operations focused.** While my primary objective may be to write code for solving
-product problems, I've learned over the years that you could write perfect code, but
-without a solid infrastructure behind it, you'll never be able to scale out your system.
-
-I run my own [Kubernetes](https://github.com/kubernetes/kubernetes) cluster in AWS,
-built through [kops](https://github.com/kubernetes/kops). That's exactly how I run this
-blog.
 
 **I am focused on human scalability.** I keep human scalable solutions in the front of
 my mind. This can mean linters, static analaysis, or other tooling. I will help
@@ -91,6 +101,7 @@ on a command line. I don't like IDEs. I think they hide away too much. I try my 
 list out my tools on my [vimrc](https://github.com/abatilo/vimrc) repository. This
 repository has admittedly expanded to housing my dotfiles as well.
 
-If you've actually read my profile, and you'd like to talk, [click here to send me an
-email](mailto:aaronbatilo+blog@gmail.com)
-If you email me there, I promise that I'll respond in a timely manner.
+If you've actually read my profile, and you think I might be a fit for your
+company, you can [look at my resume](https://www.aaronbatilo.dev/resume) and
+[send me an email](mailto:aaronbatilo+blog@gmail.com). If you email me there,
+I'll commit to responding to you quickly.
