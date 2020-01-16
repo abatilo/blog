@@ -34,11 +34,13 @@ product](https://www.businesswire.com/news/home/20190423005393/en/Conga%C2%AE-Un
 After product launch, I helped other teams become cloud native. I left Conga to join
 [iStreamPlanet](https://istreamplanet.com/).
 
-I've made my career out of teaching people how to efficiently use Amazon Web
-Services and Kubernetes. I believe in optimizing what I like to call the
-developer experience. It's one thing for me to be a capable developer or
-operations engineer, but it's much more impactful if I can improve the
-productivity of everyone in my engineering organization.
+I've made my career out of teaching people how to efficiently and cost
+effectively use Amazon Web Services and Kubernetes. I believe in optimizing
+what I like to call the developer experience. It's one thing for me to be a
+capable developer or operations engineer, but it's much more impactful if I can
+improve the productivity of everyone in my engineering organization. It's easy
+to justify my worth when I can translate my actions to direct cost savings on
+your AWS bill.
 
 This comes through building sophisticated CI/CD pipelines that let you develop
 fearlessly, building cross platform and repeatable local development
@@ -86,9 +88,10 @@ fear of getting paged won't lend itself to my happiness.
 I believe in the [quantified self](https://quantifiedself.com/) movement and strive to
 quantify everything I do. I have sleep trackers, fitness trackers, etc.
 
-**I am egoless.** My concern is never that I am right. I have no problems admitting I am
-wrong, and in fact I do it openly and freely. My concern is that we're making the right
-decisions **as a team**. If I'm passionate about a topic, you'll know it, but I'm only
+**I am egoless.** My concern is never that I am right. I have no problems
+admitting I am wrong. I do it openly and freely. My concern is that we're
+making the right decisions **as a team** and the right decisions for the
+**customer**. If I'm passionate about a topic, you'll know it, but I'm only
 trying to make sure that we're considering everything that we can.
 
 **I am transparent.** There are no secrets with me. I don't want to spend my time dealing
@@ -101,7 +104,7 @@ on a command line. I don't like IDEs. I think they hide away too much. I try my 
 list out my tools on my [vimrc](https://github.com/abatilo/vimrc) repository. This
 repository has admittedly expanded to housing my dotfiles as well.
 
-If you've actually read my profile, and you think I might be a fit for your
+If you've actually read through my profile, and you think I might be a fit for your
 company, you can [look at my resume](https://www.aaronbatilo.dev/resume) and
-[send me an email](mailto:aaronbatilo+blog@gmail.com). If you email me there,
-I'll commit to responding to you quickly.
+[message me at this rotating hidden
+email](mailto:aaronbatilo+1fba8df@gmail.com).

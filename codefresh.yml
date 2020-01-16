@@ -1,9 +1,6 @@
 version: '1.0'
 stages:
   - build
-  - canary25
-  - canary50
-  - canary75
   - release
 steps:
   clone:
@@ -14,15 +11,6 @@ steps:
       repo: 'abatilo/blog'
       git: github
       revision: 'master'
-  previous_version:
-    stage: build
-    title: Get Previous Version
-    type: freestyle
-    arguments:
-      image: 'codefresh/kubectl:latest'
-      working_directory: 'blog/'
-      commands:
-        - cf_export PREVIOUS_VERSION=$(kubectl --context chopper -n applications get deployment blog -o jsonpath='{.spec.template.spec.containers[0].image}' | cut -d':' -f2)
   version:
     stage: build
     title: Get Version
@@ -39,103 +27,10 @@ steps:
     image_name: 'abatilo/blog'
     working_directory: 'blog'
     tag: ${{VERSION}}
-  install_25:
-    stage: canary25
-    fail_fast: false
-    image: 'codefresh/cfstep-helm:2.9.1'
-    title: Install at 25%
-    environment:
-      - CHART_REF=blog/blog
-      - RELEASE_NAME=blog
-      - KUBE_CONTEXT=chopper
-      - NAMESPACE=applications
-      - VALUESFILE_prod='blog/blog/values.yaml'
-      - VALUE_image_repository='r.cfcr.io/abatilo/abatilo/blog'
-      - VALUE_image_tag='${{PREVIOUS_VERSION}}'
-      - VALUE_canary_enabled=true
-      - VALUE_canary_percentage=25
-      - VALUE_canary_tag='${{VERSION}}'
-  timeout_25:
-    stage: canary25
-    type: pending-approval
-    fail_fast: false
-    title: Waiting with 25%
-    description: Step description
-    timeout:
-      duration: 0.005
-      finalState: approved
-  install_50:
-    stage: canary50
-    fail_fast: false
-    image: 'codefresh/cfstep-helm:2.9.1'
-    title: Install at 50%
-    environment:
-      - CHART_REF=blog/blog
-      - RELEASE_NAME=blog
-      - KUBE_CONTEXT=chopper
-      - NAMESPACE=applications
-      - VALUESFILE_prod='blog/blog/values.yaml'
-      - VALUE_image_repository='r.cfcr.io/abatilo/abatilo/blog'
-      - VALUE_image_tag='${{PREVIOUS_VERSION}}'
-      - VALUE_canary_enabled=true
-      - VALUE_canary_percentage=50
-      - VALUE_canary_tag='${{VERSION}}'
-    when:
-      condition:
-        all:
-          canary25Approved: steps.timeout_25.result == 'approved'
-  timeout_50:
-    stage: canary50
-    fail_fast: false
-    type: pending-approval
-    title: Waiting at 50%
-    description: Step description
-    timeout:
-      duration: 0.005
-      finalState: approved
-    when:
-      condition:
-        all:
-          canary25Approved: steps.timeout_25.result == 'approved'
-  install_75:
-    stage: canary75
-    fail_fast: false
-    image: 'codefresh/cfstep-helm:2.9.1'
-    title: Install at 75%
-    environment:
-      - CHART_REF=blog/blog
-      - RELEASE_NAME=blog
-      - KUBE_CONTEXT=chopper
-      - NAMESPACE=applications
-      - VALUESFILE_prod='blog/blog/values.yaml'
-      - VALUE_image_repository='r.cfcr.io/abatilo/abatilo/blog'
-      - VALUE_image_tag='${{PREVIOUS_VERSION}}'
-      - VALUE_canary_enabled=true
-      - VALUE_canary_percentage=75
-      - VALUE_canary_tag='${{VERSION}}'
-    when:
-      condition:
-        all:
-          canary25Approved: steps.timeout_25.result == 'approved'
-          canary50Approved: steps.timeout_50.result == 'approved'
-  timeout_75:
-    stage: canary75
-    fail_fast: false
-    type: pending-approval
-    title: Waiting at 75%
-    description: Step description
-    timeout:
-      duration: 0.005
-      finalState: approved
-    when:
-      condition:
-        all:
-          canary25Approved: steps.timeout_25.result == 'approved'
-          canary50Approved: steps.timeout_50.result == 'approved'
-  install_100:
+  install:
     stage: release
     image: 'codefresh/cfstep-helm:2.9.1'
-    title: Install at 100%
+    title: Install
     environment:
       - CHART_REF=blog/blog
       - RELEASE_NAME=blog
@@ -145,30 +40,3 @@ steps:
       - VALUE_image_repository='r.cfcr.io/abatilo/abatilo/blog'
       - VALUE_image_tag='${{VERSION}}'
       - VALUE_canary_enabled=false
-    when:
-      condition:
-        all:
-          canary25Approved: steps.timeout_25.result == 'approved'
-          canary50Approved: steps.timeout_50.result == 'approved'
-          canary75Approved: steps.timeout_75.result == 'approved'
-  revert:
-    stage: release
-    image: 'codefresh/cfstep-helm:2.9.1'
-    title: Revert
-    environment:
-      - CHART_REF=blog/blog
-      - RELEASE_NAME=blog
-      - KUBE_CONTEXT=chopper
-      - NAMESPACE=applications
-      - VALUESFILE_prod='blog/blog/values.yaml'
-      - VALUE_image_repository='r.cfcr.io/abatilo/abatilo/blog'
-      - VALUE_image_tag='${{PREVIOUS_VERSION}}'
-      - VALUE_canary_enabled=false
-      - VALUE_canary_percentage=100
-      - VALUE_canary_tag='${{VERSION}}'
-    when:
-      condition:
-        any:
-          canary25Approved: steps.timeout_25.result != 'approved'
-          canary50Approved: steps.timeout_50.result != 'approved'
-          canary75Approved: steps.timeout_75.result != 'approved'
