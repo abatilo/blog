@@ -104,7 +104,12 @@ on a command line. I don't like IDEs. I think they hide away too much. I try my 
 list out my tools on my [vimrc](https://github.com/abatilo/vimrc) repository. This
 repository has admittedly expanded to housing my dotfiles as well.
 
+I'm only willing to consider positions with the following properties:
+* Must be a fully remote position
+* Must involve Golang
+* Must involve Kubernetes
+
 If you've actually read through my profile, and you think I might be a fit for your
 company, you can [look at my resume](https://www.aaronbatilo.dev/resume) and
-[message me at this rotating hidden
-email](mailto:aaronbatilo+1fba8df@gmail.com).
+[message me at this hidden
+email](mailto:aaronbatilo+gentle@gmail.com).
