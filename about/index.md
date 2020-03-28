@@ -105,11 +105,10 @@ list out my tools on my [vimrc](https://github.com/abatilo/vimrc) repository. Th
 repository has admittedly expanded to housing my dotfiles as well.
 
 I'm only willing to consider positions with the following properties:
-* Must be a fully remote position
-* Must involve Golang
-* Must involve Kubernetes
+* **Must** be a fully remote position
+* **Must** involve Golang
+* **Must** involve Kubernetes
 
 If you've actually read through my profile, and you think I might be a fit for your
 company, you can [look at my resume](https://www.aaronbatilo.dev/resume) and
-[message me at this hidden
-email](mailto:aaronbatilo+gentle@gmail.com).
+[email me about the best meal you've ever had.](mailto:aaronbatilo@gmail.com).
