@@ -1,0 +1,4 @@
+buttons:
+  - title: Run hello
+    action: "run_hello"
+    description: Print hello world
