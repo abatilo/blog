@@ -1,0 +1,12 @@
+on:
+  repository_dispatch:
+    types: [run_hello]
+name: Run hello
+
+jobs:
+  stage:
+    name: Run hello
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Run hello"
