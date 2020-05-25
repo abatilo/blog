@@ -50,9 +50,10 @@ environments, and much more.
 product problems, I've learned over the years that you could write perfect code, but
 without a solid infrastructure behind it, you'll never be able to scale out your system.
 
-I run my own [Kubernetes](https://github.com/kubernetes/kubernetes) cluster in AWS,
-built through [kops](https://github.com/kubernetes/kops). That's exactly how I run this
-blog.
+I run my own [Kubernetes](https://github.com/kubernetes/kubernetes) cluster in
+AWS, built through
+[Pulumi](https://www.pulumi.com/docs/get-started/kubernetes/). That's exactly
+how I run this blog.
 
 **I am competitive.** I like to be the best. I want to be better than I am. But
 something that I want to explicitly point out is that I'm not interested in becoming the
