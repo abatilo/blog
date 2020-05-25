@@ -30,9 +30,7 @@ const service = deployment.createService();
 const ingressMiddleware = new k8s.apiextensions.CustomResource(appName, {
   apiVersion: "traefik.containo.us/v1alpha1",
   kind: "Middleware",
-  metadata: {
-    name: deployment.metadata.name,
-  },
+  metadata: {},
   spec: {
     headers: {
       forceSTSHeader: true,
@@ -55,9 +53,6 @@ const ingressMiddleware = new k8s.apiextensions.CustomResource(appName, {
 const ingressRoute = new k8s.apiextensions.CustomResource(appName, {
   apiVersion: "traefik.containo.us/v1alpha1",
   kind: "IngressRoute",
-  metadata: {
-    name: deployment.metadata.name,
-  },
   spec: {
     entryPoints: ["websecure"],
     routes: [
