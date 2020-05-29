@@ -43,53 +43,57 @@ const pdb = new k8s.policy.v1beta1.PodDisruptionBudget(
   { provider: k8sProvider }
 );
 
-const ingressMiddleware = new k8s.apiextensions.CustomResource(
+const gateway = new k8s.apiextensions.CustomResource(
   appName,
   {
-    apiVersion: "traefik.containo.us/v1alpha1",
-    kind: "Middleware",
+    apiVersion: "networking.istio.io/v1alpha3",
+    kind: "Gateway",
     metadata: {},
     spec: {
-      headers: {
-        forceSTSHeader: true,
-        stsSeconds: 31536000,
-        stsIncludeSubdomains: true,
-        stsPreload: true,
-        referrerPolicy: "no-referrer-when-downgrade",
-        contentTypeNosniff: true,
-        contentSecurityPolicy: "upgrade-insecure-requests",
-        browserXssFilter: true,
-        customFrameOptionsValue: "SAMEORIGIN",
-        customResponseHeaders: {
-          "Feature-Policy":
-            "geolocation none; midi none; notifications none; push none; sync-xhr none; microphone none; camera none; magnetometer none; gyroscope none; speaker self; vibrate none; fullscreen self; payment none;",
-        },
+      selector: {
+        istio: "ingressgateway",
       },
+      servers: [
+        {
+          port: {
+            number: service.spec.ports[0].port,
+            name: service.spec.ports[0].name,
+            protocol: "HTTP",
+          },
+          hosts: ["www.aaronbatilo.dev"],
+        },
+      ],
     },
   },
   { provider: k8sProvider }
 );
 
-const ingressRoute = new k8s.apiextensions.CustomResource(
+const virtualService = new k8s.apiextensions.CustomResource(
   appName,
   {
-    apiVersion: "traefik.containo.us/v1alpha1",
-    kind: "IngressRoute",
+    apiVersion: "networking.istio.io/v1alpha3",
+    kind: "VirtualService",
+    metadata: {},
     spec: {
-      entryPoints: ["websecure"],
-      routes: [
+      hosts: ["www.aaronbatilo.dev"],
+      gateways: [gateway.metadata.name],
+      http: [
         {
-          match: "Host(`www.aaronbatilo.dev`)",
-          kind: "Rule",
-          middlewares: [
+          match: [
             {
-              name: ingressMiddleware.metadata.name,
+              uri: {
+                prefix: "/",
+              },
             },
           ],
-          services: [
+          route: [
             {
-              name: service.metadata.name,
-              port: service.spec.ports[0].port,
+              destination: {
+                port: {
+                  number: service.spec.ports[0].port,
+                },
+                host: service.metadata.name,
+              },
             },
           ],
         },
