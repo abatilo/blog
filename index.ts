@@ -23,6 +23,9 @@ const pod = new kx.PodBuilder({
 const deployment = new kx.Deployment(
   appName,
   {
+    metadata: {
+      namespace: "applications",
+    },
     spec: pod.asDeploymentSpec({
       replicas: 2,
       strategy: { rollingUpdate: { maxUnavailable: 0 } },
@@ -35,6 +38,9 @@ const service = deployment.createService();
 const pdb = new k8s.policy.v1beta1.PodDisruptionBudget(
   appName,
   {
+    metadata: {
+      namespace: deployment.metadata.namespace,
+    },
     spec: {
       maxUnavailable: 0,
       selector: deployment.spec.selector,
@@ -48,7 +54,9 @@ const gateway = new k8s.apiextensions.CustomResource(
   {
     apiVersion: "networking.istio.io/v1alpha3",
     kind: "Gateway",
-    metadata: {},
+    metadata: {
+      namespace: deployment.metadata.namespace,
+    },
     spec: {
       selector: {
         istio: "ingressgateway",
@@ -56,8 +64,8 @@ const gateway = new k8s.apiextensions.CustomResource(
       servers: [
         {
           port: {
-            number: service.spec.ports[0].port,
-            name: service.spec.ports[0].name,
+            number: 443,
+            name: "https",
             protocol: "HTTP",
           },
           hosts: ["www.aaronbatilo.dev"],
@@ -73,7 +81,9 @@ const virtualService = new k8s.apiextensions.CustomResource(
   {
     apiVersion: "networking.istio.io/v1alpha3",
     kind: "VirtualService",
-    metadata: {},
+    metadata: {
+      namespace: deployment.metadata.namespace,
+    },
     spec: {
       hosts: ["www.aaronbatilo.dev"],
       gateways: [gateway.metadata.name],
@@ -89,9 +99,6 @@ const virtualService = new k8s.apiextensions.CustomResource(
           route: [
             {
               destination: {
-                port: {
-                  number: service.spec.ports[0].port,
-                },
                 host: service.metadata.name,
               },
             },
