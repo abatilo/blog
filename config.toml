@@ -1,0 +1,59 @@
+baseURL = "https://www.aaronbatilo.dev"
+title = "Aaron's blog"
+theme = "etch"
+languageCode = "en-US"
+enableInlineShortcodes = true
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+[params]
+  description = "Software engineering in story form"
+  copyright = "Copyright © 2020 Aaron Batilo"
+  dark = "auto"
+  highlight = true
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "posts"
+    title = "posts"
+    url = "/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "about"
+    name = "about"
+    title = "about"
+    url = "/about"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "resume"
+    name = "resume"
+    title = "resume"
+    url = "/resume"
+    weight = 30
+
+  [[menu.main]]
+    identifier = "linkedin"
+    name = "linkedin"
+    title = "linkedin"
+    url = "https://www.linkedin.com/in/abatilo"
+    weight = 40
+
+  [[menu.main]]
+    identifier = "github"
+    name = "github"
+    title = "github"
+    url = "https://www.github.com/abatilo"
+    weight = 50
+
+[permalinks]
+  posts = "/:title/"
+
+[markup.goldmark.renderer]
+  # Allow HTML in Markdown
+  unsafe = true
+
+  [markup.tableOfContents]
+    ordered = true

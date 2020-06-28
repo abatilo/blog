@@ -1,20 +1,15 @@
-FROM jekyll/builder:3.8.5 as builder
+FROM klakegg/hugo:0.73.0 as builder
 
 WORKDIR /src
-COPY Gemfile Gemfile.lock /src/
-RUN bundle install
-
-COPY 404.html _config.yml favicon.ico index.html ./
-COPY about ./about
-COPY _data ./_data
-COPY _includes ./_includes
-COPY _layouts ./_layouts
-COPY _posts ./_posts
-RUN chown -R jekyll:jekyll /src
-RUN jekyll build
+COPY config.toml ./
+COPY content ./content
+COPY layouts ./layouts
+COPY themes ./themes
+RUN hugo -D
 
 FROM nginx:1.15.7-alpine
-COPY --from=builder /src/_site /usr/share/nginx/html
+
+COPY --from=builder /src/public /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
