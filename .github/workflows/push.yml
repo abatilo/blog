@@ -18,7 +18,7 @@ jobs:
         with:
           fetch-depth: 1
       - name: Create lock
-        uses: docker://abatilo/github-action-locks:v1
+        uses: abatilo/github-action-locks@master
         with:
           name: "blog-${{ github.workflow }}"
       - name: asdf_install
