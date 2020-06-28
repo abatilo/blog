@@ -4,7 +4,12 @@ WORKDIR /src
 COPY Gemfile Gemfile.lock /src/
 RUN bundle install
 
-COPY . .
+COPY 404.html _config.yml favicon.ico index.html ./
+COPY about ./about
+COPY _data ./_data
+COPY _includes ./_includes
+COPY _layouts ./_layouts
+COPY _posts ./_posts
 RUN chown -R jekyll:jekyll /src
 RUN jekyll build
 
