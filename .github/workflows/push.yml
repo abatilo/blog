@@ -30,10 +30,6 @@ jobs:
         uses: abatilo/github-action-locks@master
         with:
           name: "blog-${{ github.workflow }}"
-      - name: asdf_install
-        uses: asdf-vm/actions/install@v1.0.0
-        env:
-          NODEJS_CHECK_SIGNATURES: "no"
       - env:
           PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
         run: |
