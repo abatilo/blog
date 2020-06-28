@@ -112,4 +112,4 @@ I'm only willing to consider positions with the following properties:
 
 If you've actually read through my profile, and you think I might be a fit for your
 company, you can [look at my resume](https://www.aaronbatilo.dev/resume) and
-[email me about the best meal you've ever had.](mailto:aaronbatilo@gmail.com).
+[email me about the best meal you've ever had](mailto:aaronbatilo@gmail.com).
