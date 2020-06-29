@@ -8,5 +8,5 @@ jobs:
     name: Run hello
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "Run hello"
+      # Just want to see if this gets updated
+      - uses: actions/checkout@v2.2.0
