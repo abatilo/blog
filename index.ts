@@ -101,6 +101,21 @@ const virtualService = new k8s.apiextensions.CustomResource(
               destination: {
                 host: service.metadata.name,
               },
+              headers: {
+                response: {
+                  add: {
+                    "Strict-Transport-Security":
+                      "max-age=31536000; includeSubDomains",
+                    "Content-Security-Policy": "upgrade-insecure-requests",
+                    "X-Frame-Options": "SAMEORIGIN",
+                    "X-Content-Type-Options": "nosniff",
+                    "Referrer-Policy": "no-referrer-when-downgrade",
+                    "X-XSS-Protection": "1; mode=block",
+                    "Feature-Policy":
+                      "geolocation none; midi none; notifications none; push none; sync-xhr none; microphone none; camera none; magnetometer none; gyroscope none; speaker self; vibrate none; fullscreen self; payment none;",
+                  },
+                },
+              },
             },
           ],
         },
