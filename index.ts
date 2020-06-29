@@ -11,7 +11,11 @@ const k8sProvider = new k8s.Provider("prod", {
   kubeconfig: kubeconfig.apply(JSON.stringify),
 });
 const repository = new awsx.ecr.Repository(appName);
-const image = repository.buildAndPushImage("./");
+const image = repository.buildAndPushImage({
+  cacheFrom: {
+    stages: ["builder"],
+  },
+});
 const pod = new kx.PodBuilder({
   containers: [
     {
