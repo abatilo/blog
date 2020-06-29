@@ -16,6 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      # Install asdf dependencies
       - name: asdf setup
         uses: asdf-vm/actions/setup@v1.0.0
       - name: asdf plugin add
@@ -29,11 +30,7 @@ jobs:
         run: |
           asdf install
 
-      - name: Create lock
-        uses: abatilo/github-action-locks@master
-        with:
-          name: "blog-${{ github.workflow }}"
-
+      # npm dependencies
       - name: Cache node modules
         uses: actions/cache@v2
         env:
@@ -46,8 +43,17 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - env:
-          PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
+      - name: Install npm dependencies
         run: |
           npm ci
+
+      # Perform deployment
+      - name: Create lock
+        uses: abatilo/github-action-locks@master
+        with:
+          name: "blog-${{ github.workflow }}"
+      - name: Deploy
+        env:
+          PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
+        run: |
           pulumi up -s blog --yes --skip-preview
