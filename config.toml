@@ -7,7 +7,7 @@ pygmentsCodeFences = true
 pygmentsUseClasses = true
 
 [params]
-  description = "Software engineering in story form"
+  description = ":w'ing my thoughts down"
   copyright = "Copyright © 2020 Aaron Batilo"
   dark = "auto"
   highlight = true
