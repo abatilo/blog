@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Just want to see if this gets updated
-      - uses: actions/checkout@v2.3.2
+      - uses: actions/checkout@v2.3.3
