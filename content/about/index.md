@@ -21,8 +21,8 @@ some Linux system administration work. I got really into AI and left Northrop Gr
 intern with
 [Josh.ai](https://medium.com/@joshdotai/i-made-a-computer-pretend-to-be-a-computer-that-s-pretending-to-be-a-human-here-s-what-happened-128173751967).
 I dropped out of college and worked at Josh.ai full time doing our Android app, worked
-on our NLP, worked on the backend, and worked on device integrations (it was a really
-small company at the time). I left Josh.ai and worked for FullContact where I caught the
+on our NLP, worked on the backend, and worked on device integrations. It was a really
+small company at the time. I left Josh.ai and worked for FullContact where I caught the
 operations bug. I helped migrate existing services to run on Kubernetes and [I helped
 build ML
 capabilities](https://www.fullcontact.com/blog/experimentation-leads-innovation-machine-learning-fullcontact/)
@@ -102,14 +102,6 @@ and you'll always know exactly how I feel.
 **I am simple.** I use [vim](https://www.vim.org/) and
 [tmux](https://github.com/tmux/tmux) for all of my development. I write code exclusively
 on a command line. I don't like IDEs. I think they hide away too much. I try my best to
-list out my tools on my [vimrc](https://github.com/abatilo/vimrc) repository. This
-repository has admittedly expanded to housing my dotfiles as well.
+list out my tools on my [vimrc](https://github.com/abatilo/vimrc) repository.
 
-I'm only willing to consider positions with the following properties:
-* **Must** be a fully remote position
-* **Must** involve Golang
-* **Must** involve Kubernetes
-
-If you've actually read through my profile, and you think I might be a fit for your
-company, you can [look at my resume](https://www.aaronbatilo.dev/resume) and
-[email me with this specially tagged email](mailto:aaronbatilo+FromAboutPage@gmail.com). If you jump through my hoops, I'll jump through yours :D
+[Click here to reach out](mailto:aaronbatilo+FromAboutPage@gmail.com).
