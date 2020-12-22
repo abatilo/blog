@@ -18,7 +18,7 @@ jobs:
 
       # Install asdf dependencies
       - name: asdf setup
-        uses: asdf-vm/actions/setup@v1.0.1
+        uses: asdf-vm/actions/setup@v1.1.0
       - name: asdf plugin add
         run: |
           asdf plugin-add pulumi https://github.com/canha/asdf-pulumi.git
