@@ -18,6 +18,19 @@ jobs:
         run: |
           version="$(cat .tool-versions | grep 'pulumi' | awk '{print $2}')"
           echo "::set-output name=version::${version}"
-      - name: Print asdf version
+
+      - name: Install Pulumi
+        uses: pulumi/action-install-pulumi-cli@v1.0.1
+        with:
+          pulumi-version: ${{ steps.fetch-version.outputs.version }}
         run: |
           echo "${{ steps.fetch-version.outputs.version }}"
+
+      - uses: pulumi/actions@v2
+        env:
+          PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
+        with:
+          command: preview
+          stack-name: blog
+          comment-on-pr: true
+          diff: true
