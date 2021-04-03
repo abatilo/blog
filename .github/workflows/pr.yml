@@ -19,6 +19,7 @@ jobs:
           version="$(cat .tool-versions | grep 'pulumi' | awk '{print $2}')"
           echo "::set-output name=version::${version}"
 
+      - run: npm ci
       - name: Install Pulumi
         uses: pulumi/action-install-pulumi-cli@v1.0.1
         with:
