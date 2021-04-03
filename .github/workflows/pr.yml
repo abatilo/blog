@@ -167,17 +167,26 @@ jobs:
             pulumi preview
 
       - uses: actions/checkout@v2
-      - name: Fetch asdf version
+      - name: Fetch pulumi version
         id: fetch-version
         run: |
           version="$(cat .tool-versions | grep 'pulumi' | awk '{print $2}')"
           echo "::set-output name=version::${version}"
 
-      - run: npm ci
-      - name: Install Pulumi
+      - name: Install pulumi dependencies
+        run: npm ci
+
+      - name: Install pulumi
         uses: pulumi/action-install-pulumi-cli@v1.0.1
         with:
           pulumi-version: ${{ steps.fetch-version.outputs.version }}
+
+        # Used for pulling base images without getting rate limited
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: abatilo
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -186,7 +195,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: "us-west-2"
 
-      - uses: abatilo/pulumi-composite-actions@c64b3fa4c1c2e4e2a51d1d9f99a5b1f529596828
+      - uses: abatilo/pulumi-composite-actions@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
