@@ -5,7 +5,7 @@ COPY config.toml ./
 COPY content ./content
 COPY layouts ./layouts
 COPY themes ./themes
-RUN hugo
+RUN hugo --quiet
 
 FROM nginx:1.19.6-alpine
 
