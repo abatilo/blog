@@ -20,4 +20,4 @@ jobs:
           echo "::set-output version=version::${version}"
       - name: Print asdf version
         run: |
-          echo "${{ fetch-version.outputs.version }}"
+          echo "${{ steps.fetch-version.outputs.version }}"
