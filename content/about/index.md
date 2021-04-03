@@ -1,9 +1,7 @@
 +++
 title = "About"
 +++
-
 # Who am I?
-
 My name is Aaron Batilo. I'm fascinated by the obscure and I invest time in what
 interests me. I've been a [competitive
 yo-yoer](https://www.youtube.com/watch?v=sy6fglH3Uww). I've been internationally ranked
@@ -105,5 +103,3 @@ and you'll always know exactly how I feel.
 [tmux](https://github.com/tmux/tmux) for all of my development. I write code exclusively
 on a command line. I don't like IDEs. I think they hide away too much. I try my best to
 list out my tools on my [vimrc](https://github.com/abatilo/vimrc) repository.
-
-afdsafdsasdf
