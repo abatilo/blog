@@ -27,12 +27,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: "us-west-2"
 
-      - uses: pulumi/actions@v2
+      - uses: abatilo/pulumi-composite-actions@main
         env:
-          PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          command: preview
-          stack-name: blog
-          comment-on-pr: true
-          diff: true
+          passphrase: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
+          command: -s blog preview
