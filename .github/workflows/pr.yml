@@ -15,17 +15,26 @@ jobs:
             pulumi preview
 
       - uses: actions/checkout@v2
-      - name: Fetch asdf version
+      - name: Fetch pulumi version
         id: fetch-version
         run: |
           version="$(cat .tool-versions | grep 'pulumi' | awk '{print $2}')"
           echo "::set-output name=version::${version}"
 
-      - run: npm ci
-      - name: Install Pulumi
+      - name: Install pulumi dependencies
+        run: npm ci
+
+      - name: Install pulumi
         uses: pulumi/action-install-pulumi-cli@v1.0.1
         with:
           pulumi-version: ${{ steps.fetch-version.outputs.version }}
+
+        # Used for pulling base images without getting rate limited
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: abatilo
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -34,13 +43,14 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: "us-west-2"
 
-      - uses: abatilo/pulumi-composite-actions@c64b3fa4c1c2e4e2a51d1d9f99a5b1f529596828
+      - uses: abatilo/pulumi-composite-actions@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           passphrase: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
           command: preview
           stack: blog
+
   preview2:
     name: Pulumi Preview
     runs-on: ubuntu-20.04
@@ -53,17 +63,26 @@ jobs:
             pulumi preview
 
       - uses: actions/checkout@v2
-      - name: Fetch asdf version
+      - name: Fetch pulumi version
         id: fetch-version
         run: |
           version="$(cat .tool-versions | grep 'pulumi' | awk '{print $2}')"
           echo "::set-output name=version::${version}"
 
-      - run: npm ci
-      - name: Install Pulumi
+      - name: Install pulumi dependencies
+        run: npm ci
+
+      - name: Install pulumi
         uses: pulumi/action-install-pulumi-cli@v1.0.1
         with:
           pulumi-version: ${{ steps.fetch-version.outputs.version }}
+
+        # Used for pulling base images without getting rate limited
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: abatilo
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -72,90 +91,15 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: "us-west-2"
 
-      - uses: abatilo/pulumi-composite-actions@c64b3fa4c1c2e4e2a51d1d9f99a5b1f529596828
+      - uses: abatilo/pulumi-composite-actions@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           passphrase: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
           command: preview
           stack: blog
+
   preview3:
-    name: Pulumi Preview
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: iStreamPlanet/github-actions/minimize-comments@main
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          by-author: github-actions
-          body-includes: |
-            pulumi preview
-
-      - uses: actions/checkout@v2
-      - name: Fetch asdf version
-        id: fetch-version
-        run: |
-          version="$(cat .tool-versions | grep 'pulumi' | awk '{print $2}')"
-          echo "::set-output name=version::${version}"
-
-      - run: npm ci
-      - name: Install Pulumi
-        uses: pulumi/action-install-pulumi-cli@v1.0.1
-        with:
-          pulumi-version: ${{ steps.fetch-version.outputs.version }}
-
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: "us-west-2"
-
-      - uses: abatilo/pulumi-composite-actions@c64b3fa4c1c2e4e2a51d1d9f99a5b1f529596828
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          passphrase: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
-          command: preview
-          stack: blog
-  preview4:
-    name: Pulumi Preview
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: iStreamPlanet/github-actions/minimize-comments@main
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          by-author: github-actions
-          body-includes: |
-            pulumi preview
-
-      - uses: actions/checkout@v2
-      - name: Fetch asdf version
-        id: fetch-version
-        run: |
-          version="$(cat .tool-versions | grep 'pulumi' | awk '{print $2}')"
-          echo "::set-output name=version::${version}"
-
-      - run: npm ci
-      - name: Install Pulumi
-        uses: pulumi/action-install-pulumi-cli@v1.0.1
-        with:
-          pulumi-version: ${{ steps.fetch-version.outputs.version }}
-
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: "us-west-2"
-
-      - uses: abatilo/pulumi-composite-actions@c64b3fa4c1c2e4e2a51d1d9f99a5b1f529596828
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          passphrase: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
-          command: preview
-          stack: blog
-  preview5:
     name: Pulumi Preview
     runs-on: ubuntu-20.04
     steps:
