@@ -23,8 +23,6 @@ jobs:
         uses: pulumi/action-install-pulumi-cli@v1.0.1
         with:
           pulumi-version: ${{ steps.fetch-version.outputs.version }}
-        run: |
-          echo "${{ steps.fetch-version.outputs.version }}"
 
       - uses: pulumi/actions@v2
         env:
