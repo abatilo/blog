@@ -32,4 +32,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           passphrase: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
-          command: preview -s blow
+          command: preview
+          stack: blog
