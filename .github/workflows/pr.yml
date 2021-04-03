@@ -17,7 +17,7 @@ jobs:
         id: fetch-version
         run: |
           version="$(cat .tool-versions | grep 'pulumi' | awk '{print $2}')"
-          echo "::set-output version=version::${version}"
+          echo "::set-output name=version::${version}"
       - name: Print asdf version
         run: |
           echo "${{ steps.fetch-version.outputs.version }}"
