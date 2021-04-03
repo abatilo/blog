@@ -1,7 +1,9 @@
 +++
 title = "About"
 +++
+
 # Who am I?
+
 My name is Aaron Batilo. I'm fascinated by the obscure and I invest time in what
 interests me. I've been a [competitive
 yo-yoer](https://www.youtube.com/watch?v=sy6fglH3Uww). I've been internationally ranked
