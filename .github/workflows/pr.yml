@@ -27,7 +27,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: "us-west-2"
 
-      - uses: abatilo/pulumi-composite-actions@b6974cdb9b212ea846d63a624a991135376d8089
+      - uses: abatilo/pulumi-composite-actions@c64b3fa4c1c2e4e2a51d1d9f99a5b1f529596828
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
