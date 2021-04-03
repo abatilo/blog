@@ -1,0 +1,23 @@
+name: Pull Request
+on:
+  - pull_request
+
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_REGION: "us-west-2"
+  AWS_DEFAULT_REGION: "us-west-2"
+jobs:
+  preview:
+    name: Pulumi Preview
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Fetch asdf version
+        id: fetch-version
+        run: |
+          version="$(cat .tool-versions | grep 'pulumi' | awk '{print $2}')"
+          echo "::set-output version=version::${version}"
+      - name: Print asdf version
+        run: |
+          echo "${{ fetch-version.outputs.version }}"
