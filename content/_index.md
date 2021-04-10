@@ -1,5 +1,6 @@
-Read me talking about things at https://buttondown.email/abatilo. Read about my
-values on my [/about](/about) page.
+Read me talking about things on
+[buttondown](https://buttondown.email/abatilo/archive). Read about my values on
+my [/about](/about) page.
 
 ### Things I've built
 
