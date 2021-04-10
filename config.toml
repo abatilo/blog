@@ -8,16 +8,15 @@ pygmentsUseClasses = true
 
 [params]
   description = ":w'ing my thoughts down"
-  copyright = "Copyright © 2020 Aaron Batilo"
   dark = "auto"
   highlight = true
 
 [menu]
   [[menu.main]]
-    identifier = "posts"
-    name = "posts"
-    title = "posts"
-    url = "/"
+    identifier = "email"
+    name = "email me"
+    title = "email me"
+    url = "mailto:aaronbatilo@gmail.com?subject=I saw your website"
     weight = 10
 
   [[menu.main]]
