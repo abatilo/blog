@@ -56,74 +56,50 @@ const pdb = new k8s.policy.v1beta1.PodDisruptionBudget(
   { provider: k8sProvider }
 );
 
-const gateway = new k8s.apiextensions.CustomResource(
+const ingressMiddleware = new k8s.apiextensions.CustomResource(
   appName,
   {
-    apiVersion: "networking.istio.io/v1alpha3",
-    kind: "Gateway",
-    metadata: {
-      namespace: deployment.metadata.namespace,
-    },
+    apiVersion: "traefik.containo.us/v1alpha1",
+    kind: "Middleware",
+    metadata: {},
     spec: {
-      selector: {
-        istio: "ingressgateway",
-      },
-      servers: [
-        {
-          port: {
-            number: 443,
-            name: "https",
-            protocol: "HTTP",
-          },
-          hosts: ["www.aaronbatilo.dev"],
+      headers: {
+        forceSTSHeader: true,
+        stsSeconds: 31536000,
+        stsIncludeSubdomains: true,
+        stsPreload: true,
+        referrerPolicy: "no-referrer-when-downgrade",
+        contentTypeNosniff: true,
+        contentSecurityPolicy: "upgrade-insecure-requests",
+        browserXssFilter: true,
+        customFrameOptionsValue: "SAMEORIGIN",
+        customResponseHeaders: {
+          "Feature-Policy":
+            "geolocation none; midi none; notifications none; push none; sync-xhr none; microphone none; camera none; magnetometer none; gyroscope none; speaker self; vibrate none; fullscreen self; payment none;",
         },
-      ],
+      },
     },
   },
   { provider: k8sProvider }
 );
 
-const virtualService = new k8s.apiextensions.CustomResource(
+const ingressRoute = new k8s.apiextensions.CustomResource(
   appName,
   {
-    apiVersion: "networking.istio.io/v1alpha3",
-    kind: "VirtualService",
+    apiVersion: "traefik.containo.us/v1alpha1",
+    kind: "IngressRoute",
     metadata: {
       namespace: deployment.metadata.namespace,
     },
     spec: {
-      hosts: ["www.aaronbatilo.dev"],
-      gateways: [gateway.metadata.name],
-      http: [
+      entryPoints: ["websecure"],
+      routes: [
         {
-          match: [
-            {
-              uri: {
-                prefix: "/",
-              },
-            },
-          ],
-          route: [
-            {
-              destination: {
-                host: service.metadata.name,
-              },
-              headers: {
-                response: {
-                  add: {
-                    "Strict-Transport-Security":
-                      "max-age=31536000; includeSubDomains",
-                    "Content-Security-Policy": "upgrade-insecure-requests",
-                    "X-Frame-Options": "SAMEORIGIN",
-                    "X-Content-Type-Options": "nosniff",
-                    "Referrer-Policy": "no-referrer-when-downgrade",
-                    "X-XSS-Protection": "1; mode=block",
-                    "Feature-Policy":
-                      "geolocation none; midi none; notifications none; push none; sync-xhr none; microphone none; camera none; magnetometer none; gyroscope none; speaker self; vibrate none; fullscreen self; payment none;",
-                  },
-                },
-              },
-            },
+          match: "Host(`www.aaronbatilo.dev`) && PathPrefix(`/`)",
+          kind: "Rule",
+          middlewares: [{ name: ingressMiddleware.metadata.name }],
+          services: [
+            { name: service.metadata.name, port: service.spec.ports[0].port },
           ],
         },
       ],
