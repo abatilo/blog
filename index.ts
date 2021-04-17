@@ -61,7 +61,7 @@ const ingressMiddleware = new k8s.apiextensions.CustomResource(
   {
     apiVersion: "traefik.containo.us/v1alpha1",
     kind: "Middleware",
-    metadata: {},
+    metadata: { namespace: deployment.metadata.name },
     spec: {
       headers: {
         forceSTSHeader: true,
