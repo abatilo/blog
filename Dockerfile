@@ -4,6 +4,7 @@ WORKDIR /src
 COPY config.toml ./
 COPY content ./content
 COPY layouts ./layouts
+COPY static ./static
 COPY themes ./themes
 RUN hugo
 
