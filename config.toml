@@ -1,5 +1,5 @@
 baseURL = "https://www.aaronbatilo.dev"
-title = "Aaron's blog"
+title = "Aaron Batilo"
 theme = "etch"
 languageCode = "en-US"
 enableInlineShortcodes = true
