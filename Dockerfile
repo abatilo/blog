@@ -6,7 +6,7 @@ COPY content ./content
 COPY layouts ./layouts
 COPY static ./static
 COPY themes ./themes
-RUN hugo
+RUN hugo --minify
 
 FROM nginx:1.19.10-alpine
 
