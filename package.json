@@ -1,7 +1,7 @@
 {
     "name": "blog",
     "devDependencies": {
-        "@types/node": "^15.0.2"
+        "@types/node": "^15.3.1"
     },
     "dependencies": {
         "@pulumi/aws": "^3.38.1",
