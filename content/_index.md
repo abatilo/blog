@@ -1,4 +1,4 @@
-Read me talking about things on
+I talk about things on
 [buttondown](https://buttondown.email/abatilo/archive). Read about my values on
 my [/about](/about) page.
 
