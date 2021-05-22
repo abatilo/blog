@@ -10,6 +10,10 @@ These are all projects that I've built for myself and not for the company I was
 working for. For work history and experience, check out my [/resume](/resume)
 or my [linkedin](https://www.linkedin.com/in/abatilo).
 
+- [https://coloradoexcluded.com](https://coloradoexcluded.com), A website that
+  lists companies that are avoiding hiring in the state of Colorado. Possibly
+  because of the [Equal Pay For Equal Work
+  Act](https://leg.colorado.gov/bills/sb19-085) or for other reasons.
 - [pulumi-composite-actions](https://github.com/abatilo/pulumi-composite-actions),
   an alternative to the official Pulumi GitHub Actions that supports commenting
   on a pull request only when there's detected changes as well as Pulumi's
