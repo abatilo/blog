@@ -13,7 +13,10 @@ or my [linkedin](https://www.linkedin.com/in/abatilo).
 - [https://coloradoexcluded.com](https://coloradoexcluded.com), A website that
   lists companies that are avoiding hiring in the state of Colorado. Possibly
   because of the [Equal Pay For Equal Work
-  Act](https://leg.colorado.gov/bills/sb19-085) or for other reasons.
+  Act](https://leg.colorado.gov/bills/sb19-085) or for other reasons. Featured
+  on [Next with Kyle
+  Clark](https://www.9news.com/video/news/local/next/website-tracks-companies-exclude-colorado-applicants-salary-requirement-law/73-ffbab2e6-bbd3-4118-b99f-c5a85361e983)
+  on Denver's 9News station.
 - [pulumi-composite-actions](https://github.com/abatilo/pulumi-composite-actions),
   an alternative to the official Pulumi GitHub Actions that supports commenting
   on a pull request only when there's detected changes as well as Pulumi's
