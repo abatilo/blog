@@ -2,6 +2,8 @@ I talk about things on
 [buttondown](https://buttondown.email/abatilo/archive). Read about my values on
 my [/about](/about) page.
 
+You can [email me](mailto:aaronbatilo@gmail.com) or you can [book on my calendar](https://calendar.x.ai/abatilo) if you want to reach me directly!
+
 ### Things I've built
 
 ---

@@ -13,39 +13,32 @@ pygmentsUseClasses = true
 
 [menu]
   [[menu.main]]
-    identifier = "email"
-    name = "email me"
-    title = "email me"
-    url = "mailto:aaronbatilo@gmail.com?subject=I saw your website"
-    weight = 10
-
-  [[menu.main]]
     identifier = "about"
     name = "about"
     title = "about"
     url = "/about"
-    weight = 20
+    weight = 10
 
   [[menu.main]]
     identifier = "resume"
     name = "resume"
     title = "resume"
     url = "/resume"
-    weight = 30
+    weight = 20
 
   [[menu.main]]
     identifier = "linkedin"
     name = "linkedin"
     title = "linkedin"
     url = "https://www.linkedin.com/in/abatilo"
-    weight = 40
+    weight = 30
 
   [[menu.main]]
     identifier = "github"
     name = "github"
     title = "github"
     url = "https://www.github.com/abatilo"
-    weight = 50
+    weight = 40
 
 [permalinks]
   posts = "/:title/"
