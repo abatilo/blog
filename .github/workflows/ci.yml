@@ -36,6 +36,5 @@ jobs:
           AWS_DEFAULT_REGION: us-west-2
         run: |
           aws --debug eks update-kubeconfig --name abatilo-cloud-tf
-          kubectl config get-contexts
-          # sed -i 's/DOCKER_TAG/${{ github.sha }}/' blog.yaml
-          # kubectl apply -f blog.yaml
+          sed -i 's/DOCKER_TAG/${{ github.sha }}/' blog.yaml
+          kubectl apply -f blog.yaml
