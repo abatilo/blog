@@ -28,11 +28,12 @@ jobs:
           labels: |
             org.opencontainers.image.source=https://github.com/abatilo/blog
 
-      - env:
+      - name: Deploy
+        env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          aws eks update-kubeconfig --name abatilo-cloud-tf
+          aws --debug eks update-kubeconfig --name abatilo-cloud-tf
           kubectl config get-contexts
           # sed -i 's/DOCKER_TAG/${{ github.sha }}/' blog.yaml
           # kubectl apply -f blog.yaml
