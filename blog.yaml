@@ -42,3 +42,36 @@ spec:
   selector:
     matchLabels:
       app: blog
+---
+apiVersion: "traefik.containo.us/v1alpha1"
+kind: "Middleware"
+metadata:
+  name: blog
+spec:
+  headers:
+    forceSTSHeader: true
+    stsSeconds: 31536000
+    stsIncludeSubdomains: true
+    stsPreload: true
+    referrerPolicy: "no-referrer-when-downgrade"
+    contentTypeNosniff: true
+    contentSecurityPolicy: "upgrade-insecure-requests"
+    browserXssFilter: true
+    customFrameOptionsValue: "SAMEORIGIN"
+    customResponseHeaders:
+      "Permissions-Policy": "geolocation=(); midi=(); notifications=(); push=(); sync-xhr=(); microphone=(); camera=(); magnetometer=(); gyroscope=(); speaker=(self); vibrate=(); fullscreen=(self); payment=();"
+---
+apiVersion: "traefik.containo.us/v1alpha1"
+kind: "IngressRoute"
+metadata:
+  name: blog
+spec:
+  entryPoints: ["websecure"]
+  routes:
+    - match: "Host(`www.aaronbatilo.dev`) && PathPrefix(`/`)"
+      kind: "Rule"
+      middlewares:
+        - name: blog
+      services:
+        - name: blog
+          port: 80
