@@ -1,5 +1,0 @@
-name: blog
-runtime: nodejs
-description: My blog
-backend:
-  url: s3://abatilo/infra/cloud/
