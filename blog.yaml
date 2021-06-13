@@ -33,7 +33,7 @@ spec:
       port: 80
       targetPort: 80
 ---
-apiVersion: policy/v1
+apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
   name: blog
