@@ -14,7 +14,7 @@ or my [linkedin](https://www.linkedin.com/in/abatilo).
 
 - [https://coloradoexcluded.com](https://coloradoexcluded.com), A website that
   lists companies that are avoiding hiring in the state of Colorado. Featured
-  on the [Wall Street Journal](https://www.wsj.com/articles/many-companies-want-remote-workersexcept-from-colorado-11623937649?reflink=desktopwebshare_permalink), [The Colorado Sun](https://coloradosun.com/2021/06/19/colorado-job-openings-salary-equal-pay-unemployment/), and [Denver's 9News](https://www.9news.com/video/news/local/next/website-tracks-companies-exclude-colorado-applicants-salary-requirement-law/73-ffbab2e6-bbd3-4118-b99f-c5a85361e983),.
+  on the [Wall Street Journal](https://www.wsj.com/articles/many-companies-want-remote-workersexcept-from-colorado-11623937649?reflink=desktopwebshare_permalink), [The Colorado Sun](https://coloradosun.com/2021/06/19/colorado-job-openings-salary-equal-pay-unemployment/), and [Denver's 9News](https://www.9news.com/video/news/local/next/website-tracks-companies-exclude-colorado-applicants-salary-requirement-law/73-ffbab2e6-bbd3-4118-b99f-c5a85361e983).
 - [pulumi-composite-actions](https://github.com/abatilo/pulumi-composite-actions),
   an alternative to the official Pulumi GitHub Actions that supports commenting
   on a pull request only when there's detected changes as well as Pulumi's
