@@ -12,8 +12,11 @@ jobs:
     steps:
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           commenter="${{ github.event.comment.user.login }}"
+          body="${{ github.event.comment.body }}"
           owner="${{ github.event.repository.owner.login }}"
           repo="${{ github.event.repository.name}}"
           pull_number="${{ github.event.issue.number }}"
@@ -24,5 +27,6 @@ jobs:
           echo ${pull_number}
           echo ${issue_id}
 
-          # hub api /repos/${owner}/${repo}/pulls/${pull_number}/comments/${issue_id}/replies -f body="from action"
-          hub api /repos/${owner}/${repo}/issues/${pull_number}/comments -f body="@${commenter} from action"
+          sentiment="$(aws comprehend detect-sentiment --language-code en --text \"${body}\" | jq -r \".Sentiment\")"
+          echo ${sentiment}
+          # hub api /repos/${owner}/${repo}/issues/${pull_number}/comments -f body="@${commenter} from action"
