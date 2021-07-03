@@ -27,6 +27,6 @@ jobs:
           echo ${pull_number}
           echo ${issue_id}
 
-          sentiment="$(aws comprehend detect-sentiment --language-code en --text \"${body}\" | jq -r \".Sentiment\")"
+          sentiment=$(aws comprehend detect-sentiment --language-code en --text "${body}" | jq -r ".Sentiment")
           echo ${sentiment}
           # hub api /repos/${owner}/${repo}/issues/${pull_number}/comments -f body="@${commenter} from action"
