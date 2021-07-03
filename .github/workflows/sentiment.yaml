@@ -11,17 +11,9 @@ jobs:
     if: ${{ github.event.issue.pull_request }}
     steps:
       - env:
-          VERSION: 1.12.1
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          wget -c https://github.com/cli/cli/releases/download/v${VERSION}/gh_${VERSION}_linux_amd64.tar.gz -O - | tar -xz -C /tmp
-          sudo mv /tmp/gh_${VERSION}_linux_amd64/bin/gh /usr/local/bin/gh
-
-          ls -la /usr/local/bin/
-
-          echo $PATH
-
-          owner="${{ github.event.repository.owner}}"
+          owner="${{ github.event.repository.owner }}"
           repo="${{ github.event.repository.name}}"
           pull_number="${{ github.event.issue.number }}"
           issue_id="${{ github.event.issue.id }}"
@@ -31,5 +23,4 @@ jobs:
           echo ${pull_number}
           echo ${issue_id}
 
-
-          # gh api /repos/${owner}/${repo}/pulls/${pull_number}/comments/${issue_id} -f body="from action"
+          hub api /repos/${owner}/${repo}/pulls/${pull_number}/comments/${issue_id} -f body="from action"
