@@ -23,11 +23,10 @@ jobs:
           pull_number="${{ github.event.issue.number }}"
           issue_id="${{ github.event.issue.id }}"
 
-          echo ${owner}
-          echo ${repo}
-          echo ${pull_number}
-          echo ${issue_id}
-
+          # Send comment body to AWS for sentiment analysis
           sentiment=$(aws comprehend detect-sentiment --language-code en --text "${body}" | jq -r ".Sentiment")
-          echo ${sentiment}
-          # hub api /repos/${owner}/${repo}/issues/${pull_number}/comments -f body="@${commenter} from action"
+
+          if [ "NEGATIVE" = "${sentiment}" ]; then
+            # Create a comment on this pull request
+            hub api /repos/${owner}/${repo}/issues/${pull_number}/comments -f body="@${commenter} Please don't be a dick"
+          fi
