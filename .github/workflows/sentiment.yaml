@@ -13,6 +13,7 @@ jobs:
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          commenter="${{ github.event.comment.user.login }}"
           owner="${{ github.event.repository.owner.login }}"
           repo="${{ github.event.repository.name}}"
           pull_number="${{ github.event.issue.number }}"
@@ -23,4 +24,5 @@ jobs:
           echo ${pull_number}
           echo ${issue_id}
 
-          hub api /repos/${owner}/${repo}/pulls/${pull_number}/comments/${issue_id} -f body="from action"
+          # hub api /repos/${owner}/${repo}/pulls/${pull_number}/comments/${issue_id}/replies -f body="from action"
+          hub api /repos/${owner}/${repo}/issues/${pull_number}/comments -f body="@${commenter} from action"
