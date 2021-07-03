@@ -28,5 +28,5 @@ jobs:
 
           if [ "NEGATIVE" = "${sentiment}" ]; then
             # Create a comment on this pull request
-            hub api /repos/${owner}/${repo}/issues/${pull_number}/comments -f body="@${commenter} Please don't be a dick"
+            hub api /repos/${owner}/${repo}/issues/${pull_number}/comments -f body="> ${body}\n@${commenter} Please don't be a dick"
           fi
