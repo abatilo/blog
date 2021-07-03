@@ -16,7 +16,7 @@ jobs:
           AWS_DEFAULT_REGION: us-west-2
         run: |
           commenter="${{ github.event.comment.user.login }}"
-          body="$(${{ github.event.comment.body }} | sed '/^$/d')"
+          body="$(echo '${{ github.event.comment.body }}' | sed '/^$/d')"
           owner="${{ github.event.repository.owner.login }}"
           repo="${{ github.event.repository.name}}"
           pull_number="${{ github.event.issue.number }}"
