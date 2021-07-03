@@ -1,0 +1,24 @@
+name: "Check for mean comments"
+on:
+  issue_comment:
+    types:
+      - created
+      - edited
+
+jobs:
+  sentiment:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.issue.pull_request }}
+    steps:
+      - env:
+          VERSION: 1.12.1
+          GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
+        run: |
+          wget -c https://github.com/cli/cli/releases/download/v${VERSION}/gh_${VERSION}_linux_amd64.tar.gz -O - | tar -xz -C /tmp
+          sudo mv /tmp/gh_${VERSION}_linux_amd64/bin/gh /usr/local/bin/gh
+
+          owner="${{ github.event.repository.owner}}"
+          repo="${{ github.event.repository.name}}"
+          pull_number="${{ github.event.issue.number }}"
+          issue_id="${{ github.event.issue.id }}"
+          gh api /repos/${owner}/${repo}/pulls/${pull_number}/comments/${issue_id} -f body="from action"
