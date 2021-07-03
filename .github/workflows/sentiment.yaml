@@ -16,7 +16,7 @@ jobs:
           AWS_DEFAULT_REGION: us-west-2
         run: |
           commenter="${{ github.event.comment.user.login }}"
-          body="$(echo '${{ github.event.comment.body }}' | sed '/^$/d')"
+          body="$(echo '${{ github.event.comment.body }}' | sed 's/^/>/')"
           owner="${{ github.event.repository.owner.login }}"
           repo="${{ github.event.repository.name}}"
           pull_number="${{ github.event.issue.number }}"
@@ -27,7 +27,7 @@ jobs:
 
           if [ "NEGATIVE" = "${sentiment}" ]; then
             # Create a comment on this pull request
-            hub api /repos/${owner}/${repo}/issues/${pull_number}/comments -f body="> ${body}
+            hub api /repos/${owner}/${repo}/issues/${pull_number}/comments -f body="${body}
 
             @${commenter} Please don't be a dick"
           fi
