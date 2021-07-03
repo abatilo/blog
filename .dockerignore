@@ -5,3 +5,4 @@ codefresh.yml
 Dockerfile
 Jenkinsfile
 version.txt
+test
