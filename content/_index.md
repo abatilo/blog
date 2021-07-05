@@ -12,6 +12,9 @@ These are all projects that I've built for myself and not for the company I was
 working for. For work history and experience, check out my [/resume](/resume)
 or my [linkedin](https://www.linkedin.com/in/abatilo).
 
+- [https://catfacts.aaronbatilo.dev](https://catfacts.aaronbatilo.dev), Get a
+  daily SMS message with a fact about cats. Fully open sourced at
+  [https://github.com/abatilo/catfacts](https://github.com/abatilo/catfacts)
 - [https://coloradoexcluded.com](https://coloradoexcluded.com), A website that
   lists companies that are avoiding hiring in the state of Colorado. Featured
   on the [Wall Street
