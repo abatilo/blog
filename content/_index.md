@@ -41,7 +41,7 @@ or my [linkedin](https://www.linkedin.com/in/abatilo).
   and [FeaturePeek](https://featurepeek.com/) for container based web services.
   Go application that would receive webhooks to trigger a file system
   refresh. Proof of concept implementations with Istio and Traefik ingress.
-- [Actions Panel](https://actionspanel.app), former GitHub App for managing
+- [Actions Panel](https://github.com/apps/actionspanel), former GitHub App for managing
   manual execution of GitHub Actions. GitHub themselves, Microsoft, Docker,
   Tidal Music, MGM Resorts and over 200 other users had the GitHub App
   installed before GitHub released the feature themselves 6 months after
