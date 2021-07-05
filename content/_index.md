@@ -49,7 +49,8 @@ or my [linkedin](https://www.linkedin.com/in/abatilo).
   Tidal Music, MGM Resorts and over 200 other users had the GitHub App
   installed before GitHub released the feature themselves 6 months after
   launch. React + TypeScript + [Primer](https://github.com/primer/components)
-  frontend with a RESTful Go backend.
+  frontend with a RESTful Go backend. Click [here](/actionspanel-preview.png)
+  for an old screenshot.
 - [actions-poetry](https://github.com/abatilo/actions-poetry), a GitHub Action
   for executing [poetry](https://github.com/python-poetry/poetry) the Python
   package management tool. It's been kept up to date with GitHub Action best
