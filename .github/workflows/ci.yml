@@ -1,5 +1,6 @@
 name: Deploy
 on:
+  pull_request: {}
   push:
     branches:
       - master
@@ -13,6 +14,10 @@ jobs:
       packages: write
       contents: read
     steps:
+      - uses: docker://chinthakagodawita/autoupdate-action@sha256:f0db4944adb5eb64565d4b2f8bb2b3f767a7224327d217c272935d21dbe7b541 # dockerhub sha
+      - uses: chinthakagodawita/autoupdate-action@95c97b013bcd901adb6b42831b9db8552b9a330f # git sha
+        if: always()
+        
       - uses: actions/checkout@v2
       - uses: asdf-vm/actions/install@v1
       - uses: docker/login-action@v1
