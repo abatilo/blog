@@ -7,7 +7,7 @@ pygmentsCodeFences = true
 pygmentsUseClasses = true
 
 [params]
-  description = ":w'ing my thoughts down"
+  description = "The website of someone who owns a light up keyboard"
   dark = "auto"
   highlight = true
 
