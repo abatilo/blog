@@ -36,6 +36,6 @@ jobs:
           AWS_DEFAULT_REGION: us-west-2
         run: |
           aws sts get-caller-identity
-          aws eks update-kubeconfig --name abatilo-cloud-tf
+          aws eks update-kubeconfig --name usw2-r
           sed -i 's/DOCKER_TAG/${{ github.sha }}/' blog.yaml
           kubectl apply -f blog.yaml
