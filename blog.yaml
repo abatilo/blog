@@ -75,3 +75,29 @@ spec:
       services:
         - name: blog
           port: 80
+---
+apiVersion: "traefik.containo.us/v1alpha1"
+kind: "Middleware"
+metadata:
+  name: calendar
+spec:
+  redirectRegex:
+    regex: .*
+    replacement: https://www.calendarhero.to/aaron
+    permanent: true
+---
+apiVersion: "traefik.containo.us/v1alpha1"
+kind: "IngressRoute"
+metadata:
+  name: calendar
+spec:
+  entryPoints: ["websecure"]
+  routes:
+    - match: "Host(`calendar.aaronbatilo.dev`) && PathPrefix(`/`)"
+      kind: "Rule"
+      middlewares:
+        - name: calendar
+      services:
+        # This is ignored but it can't be empty
+        - name: blog
+          port: 80
