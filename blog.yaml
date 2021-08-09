@@ -87,6 +87,15 @@ spec:
     permanent: true
 ---
 apiVersion: "traefik.containo.us/v1alpha1"
+kind: "Middleware"
+metadata:
+  name: calendar-https-redirect
+spec:
+  redirectScheme:
+    scheme: https
+    permanent: true
+---
+apiVersion: "traefik.containo.us/v1alpha1"
 kind: "IngressRoute"
 metadata:
   name: calendar
@@ -97,6 +106,7 @@ spec:
       kind: "Rule"
       middlewares:
         - name: calendar
+        - name: calendar-https-redirect
       services:
         # This is ignored but it can't be empty
         - name: blog
