@@ -68,7 +68,7 @@ metadata:
 spec:
   entryPoints: ["websecure"]
   routes:
-    - match: "Host(`www.aaronbatilo.dev`) && PathPrefix(`/`)"
+    - match: "(Host(`www.aaronbatilo.dev`) || Host(`aaronbatilo.dev`)) && PathPrefix(`/`)"
       kind: "Rule"
       middlewares:
         - name: blog
