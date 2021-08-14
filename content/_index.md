@@ -15,7 +15,7 @@ or my [linkedin](https://www.linkedin.com/in/abatilo).
 - [https://catfacts.aaronbatilo.dev](https://catfacts.aaronbatilo.dev), Get a
   daily SMS message with a fact about cats. Fully open sourced at
   [https://github.com/abatilo/catfacts](https://github.com/abatilo/catfacts)
-- [https://coloradoexcluded.com](https://coloradoexcluded.com), A website that
+- [https://www.coloradoexcluded.com](https://www.coloradoexcluded.com), A website that
   lists companies that are avoiding hiring in the state of Colorado. Featured
   on the [Wall Street
   Journal](https://www.wsj.com/articles/many-companies-want-remote-workersexcept-from-colorado-11623937649?reflink=desktopwebshare_permalink),
