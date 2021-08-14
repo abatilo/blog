@@ -93,7 +93,7 @@ metadata:
 spec:
   entryPoints: ["websecure"]
   routes:
-    - match: "(Host(`www.aaronbatilo.dev`) || Host(`aaronbatilo.dev`)) && PathPrefix(`/`)"
+    - match: "Host(`aaronbatilo.dev`, `www.aaronbatilo.dev`)"
       kind: "Rule"
       middlewares:
         - name: blog
@@ -116,9 +116,9 @@ kind: "IngressRoute"
 metadata:
   name: calendar
 spec:
-  entryPoints: ["websecure"]
+  entryPoints: ["web", "websecure"]
   routes:
-    - match: "Host(`calendar.aaronbatilo.dev`) && PathPrefix(`/`)"
+    - match: "Host(`calendar.aaronbatilo.dev`)"
       kind: "Rule"
       middlewares:
         - name: calendar
