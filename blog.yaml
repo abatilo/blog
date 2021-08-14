@@ -77,7 +77,7 @@ metadata:
 spec:
   entryPoints: ["web"]
   routes:
-    - match: "(Host(`www.aaronbatilo.dev`) || Host(`aaronbatilo.dev`)) && PathPrefix(`/`)"
+    - match: "Host(`aaronbatilo.dev`, `www.aaronbatilo.dev`)"
       kind: "Rule"
       middlewares:
         - name: blog-http-to-https
