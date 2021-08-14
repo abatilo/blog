@@ -61,10 +61,35 @@ spec:
     customResponseHeaders:
       "Permissions-Policy": "geolocation=(); midi=(); notifications=(); push=(); sync-xhr=(); microphone=(); camera=(); magnetometer=(); gyroscope=(); speaker=(self); vibrate=(); fullscreen=(self); payment=();"
 ---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: blog-http-to-https
+spec:
+  redirectScheme:
+    scheme: https
+    permanent: true
+---
 apiVersion: "traefik.containo.us/v1alpha1"
 kind: "IngressRoute"
 metadata:
   name: blog
+spec:
+  entryPoints: ["web"]
+  routes:
+    - match: "(Host(`www.aaronbatilo.dev`) || Host(`aaronbatilo.dev`)) && PathPrefix(`/`)"
+      kind: "Rule"
+      middlewares:
+        - name: blog-http-to-https
+        - name: blog
+      services:
+        - name: blog
+          port: 80
+---
+apiVersion: "traefik.containo.us/v1alpha1"
+kind: "IngressRoute"
+metadata:
+  name: blog-secure
 spec:
   entryPoints: ["websecure"]
   routes:
@@ -87,15 +112,6 @@ spec:
     permanent: true
 ---
 apiVersion: "traefik.containo.us/v1alpha1"
-kind: "Middleware"
-metadata:
-  name: calendar-https-redirect
-spec:
-  redirectScheme:
-    scheme: https
-    permanent: true
----
-apiVersion: "traefik.containo.us/v1alpha1"
 kind: "IngressRoute"
 metadata:
   name: calendar
@@ -106,7 +122,6 @@ spec:
       kind: "Rule"
       middlewares:
         - name: calendar
-        - name: calendar-https-redirect
       services:
         # This is ignored but it can't be empty
         - name: blog
