@@ -61,6 +61,15 @@ spec:
     customResponseHeaders:
       "Permissions-Policy": "geolocation=(); midi=(); notifications=(); push=(); sync-xhr=(); microphone=(); camera=(); magnetometer=(); gyroscope=(); speaker=(self); vibrate=(); fullscreen=(self); payment=();"
 ---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: http-to-https
+spec:
+  redirectScheme:
+    scheme: https
+    permanent: true
+---
 apiVersion: "traefik.containo.us/v1alpha1"
 kind: "IngressRoute"
 metadata:
@@ -71,6 +80,7 @@ spec:
     - match: "(Host(`www.aaronbatilo.dev`) || Host(`aaronbatilo.dev`)) && PathPrefix(`/`)"
       kind: "Rule"
       middlewares:
+        - name: http-to-https
         - name: blog
       services:
         - name: blog
