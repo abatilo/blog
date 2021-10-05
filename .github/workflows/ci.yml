@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    uses: abatilo/workflows/.github/workflows/ci.yml@86657301ec2b16a04e4ccc8b624fe093d2a9b79d
+    uses: abatilo/workflows/.github/workflows/ci.yml@main
     with:
       name: blog
     secrets:
