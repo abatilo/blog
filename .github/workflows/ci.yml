@@ -14,4 +14,4 @@ jobs:
     with:
       name: blog
     secrets:
-      token: "bar"
+      token: ${{ github.token }}
