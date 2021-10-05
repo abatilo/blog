@@ -15,7 +15,7 @@ or my [linkedin](https://www.linkedin.com/in/abatilo).
 - [https://chat.aaronbatilo.dev](https://chat.aaronbatilo.dev), A small chat
   API, written mostly as an exercise in database schema design. Fully open
   sourced at
-  [https://github.com/abatilo/chat](https://github.com/abatilo/catfacts)
+  [https://github.com/abatilo/chat](https://github.com/abatilo/chat)
 - [https://catfacts.aaronbatilo.dev](https://catfacts.aaronbatilo.dev), Get a
   daily SMS message with a fact about cats. Fully open sourced at
   [https://github.com/abatilo/catfacts](https://github.com/abatilo/catfacts)
