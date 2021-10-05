@@ -9,3 +9,4 @@ jobs:
     uses: abatilo/workflows/.github/workflows/ci.yml@main
     with:
       name: blog
+      token: ${{ secrets.GITHUB_TOKEN }}
