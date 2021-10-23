@@ -17,5 +17,5 @@ jobs:
           image-names: blog
           cut-off: A week ago UTC
           account-type: personal
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_PAT }}
           keep-at-least: 15
