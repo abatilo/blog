@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: blog
-          image: DOCKER_IMAGE
+          image: ghcr.io/abatilo/blog:DOCKER_TAG
           ports:
             - containerPort: 80
 ---
