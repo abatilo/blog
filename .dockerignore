@@ -1,7 +1,9 @@
-/_site
-/node_modules
-index.ts
-codefresh.yml
+.dockerignore
+.gitignore
+.gitmodules
+.tool-versions
+/.git/
+/.github/
+/public/
 Dockerfile
-Jenkinsfile
-version.txt
+blog.yaml
