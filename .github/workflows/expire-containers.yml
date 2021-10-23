@@ -2,6 +2,8 @@ name: Delete old container images
 
 on:
   workflow_dispatch: {}
+  schedule:
+    - "0 0 * * SUN"
 
 
 jobs:
@@ -11,11 +13,11 @@ jobs:
     permissions:
       packages: write
     steps:
-      - name: Delete 'dev' containers older than a week
+      - name: Delete old containers
         uses: snok/container-retention-policy@v1
         with:
           image-names: blog
           cut-off: A week ago UTC
           account-type: personal
           token: ${{ secrets.GH_PAT }}
-          keep-at-least: 15
+          keep-at-least: 10
