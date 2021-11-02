@@ -22,7 +22,7 @@ or my [linkedin](https://www.linkedin.com/in/abatilo).
 - [https://www.coloradoexcluded.com](https://www.coloradoexcluded.com), A website that
   lists companies that are avoiding hiring in the state of Colorado. Featured
   on the [Wall Street
-  Journal](https://www.wsj.com/articles/many-companies-want-remote-workersexcept-from-colorado-11623937649?reflink=desktopwebshare_permalink),
+  Journal](https://www.wsj.com/articles/many-companies-want-remote-workersexcept-from-colorado-11623937649?reflink=desktopwebshare_permalink), [Forbes](https://www.forbes.com/sites/isabelcontreras/2021/11/01/whats-the-pay-more-employers-including-chime-and-accenture-are-falling-in-line-with-colorado-law-requiring-salary-ranges-in-job-postings/?sh=4c4a40ac670a), [The Atlantic](https://www.theatlantic.com/politics/archive/2021/07/remote-jobs-colorado-equal-pay/619581/), 
   [The Colorado
   Sun](https://coloradosun.com/2021/06/19/colorado-job-openings-salary-equal-pay-unemployment/),
   and [Denver's
