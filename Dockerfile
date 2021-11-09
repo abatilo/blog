@@ -1,4 +1,4 @@
-FROM klakegg/hugo:0.88.0 as builder
+FROM klakegg/hugo:0.89.2 as builder
 
 WORKDIR /src
 COPY config.toml ./
