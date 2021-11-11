@@ -1,0 +1,6 @@
+githubRepoOwner: abatilo
+githubRepoName: blog
+requireChecks: true
+requireApproval: true
+githubRemote: origin
+githubBranch: master
