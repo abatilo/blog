@@ -18,6 +18,8 @@ jobs:
     name: Delete old unused container images
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          dig +short txt aaronbatilo.dev
       - name: Delete old containers
         uses: snok/container-retention-policy@v1
         with:
