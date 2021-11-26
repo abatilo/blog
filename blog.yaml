@@ -140,7 +140,7 @@ spec:
 apiVersion: "traefik.containo.us/v1alpha1"
 kind: "IngressRoute"
 metadata:
-  name: calendar
+  name: chat
 spec:
   entryPoints: ["web", "websecure"]
   routes:
