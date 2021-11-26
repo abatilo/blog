@@ -60,6 +60,7 @@ spec:
     customFrameOptionsValue: "SAMEORIGIN"
     customResponseHeaders:
       "Permissions-Policy": "geolocation=(); midi=(); notifications=(); push=(); sync-xhr=(); microphone=(); camera=(); magnetometer=(); gyroscope=(); speaker=(self); vibrate=(); fullscreen=(self); payment=();"
+      "Server": ""
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
