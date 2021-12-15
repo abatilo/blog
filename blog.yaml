@@ -153,29 +153,3 @@ spec:
         # This is ignored but it can't be empty
         - name: blog
           port: 80
----
-apiVersion: "traefik.containo.us/v1alpha1"
-kind: "Middleware"
-metadata:
-  name: catfacts
-spec:
-  redirectRegex:
-    regex: .*
-    replacement: https://www.github.com/abatilo/catfacts
-    permanent: true
----
-apiVersion: "traefik.containo.us/v1alpha1"
-kind: "IngressRoute"
-metadata:
-  name: catfacts
-spec:
-  entryPoints: ["web", "websecure"]
-  routes:
-    - match: "Host(`catfacts.aaronbatilo.dev`)"
-      kind: "Rule"
-      middlewares:
-        - name: catfacts
-      services:
-        # This is ignored but it can't be empty
-        - name: blog
-          port: 80
