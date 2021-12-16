@@ -124,9 +124,8 @@ spec:
       middlewares:
         - name: calendar
       services:
-        # This is ignored but it can't be empty
-        - name: blog
-          port: 80
+        - name: noop@internal
+          kind: TraefikService
 ---
 apiVersion: "traefik.containo.us/v1alpha1"
 kind: "Middleware"
@@ -150,6 +149,5 @@ spec:
       middlewares:
         - name: chat
       services:
-        # This is ignored but it can't be empty
-        - name: blog
-          port: 80
+        - name: noop@internal
+          kind: TraefikService
