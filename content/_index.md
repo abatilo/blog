@@ -1,8 +1,10 @@
-I talk about things on
-[buttondown](https://buttondown.email/abatilo/archive). Read about my values on
-my [/about](/about) page.
+I talk about things on [buttondown](https://buttondown.email/abatilo/archive).
+Read about my values on my [/about](/about) page.
 
-You can [email me](mailto:aaronbatilo@gmail.com) or you can [book on my calendar](https://calendar.aaronbatilo.dev) if you want to reach me directly!
+You can [email me](mailto:aaronbatilo@gmail.com) or you can [book on my
+calendar](https://calendar.aaronbatilo.dev) if you want to reach me directly!
+I'm open to contracting/consulting engagements so feel free to reach out if
+there's a project that I can help you with.
 
 ### Things I've built
 
