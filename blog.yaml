@@ -44,50 +44,6 @@ spec:
       app: blog
 ---
 apiVersion: "traefik.containo.us/v1alpha1"
-kind: "Middleware"
-metadata:
-  name: blog
-spec:
-  headers:
-    forceSTSHeader: true
-    stsSeconds: 31536000
-    stsIncludeSubdomains: true
-    stsPreload: true
-    referrerPolicy: "no-referrer-when-downgrade"
-    contentTypeNosniff: true
-    contentSecurityPolicy: "upgrade-insecure-requests"
-    browserXssFilter: true
-    customFrameOptionsValue: "SAMEORIGIN"
-    customResponseHeaders:
-      "Permissions-Policy": "geolocation=(); midi=(); notifications=(); push=(); sync-xhr=(); microphone=(); camera=(); magnetometer=(); gyroscope=(); speaker=(self); vibrate=(); fullscreen=(self); payment=();"
-      "Server": ""
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: blog-http-to-https
-spec:
-  redirectScheme:
-    scheme: https
-    permanent: true
----
-apiVersion: "traefik.containo.us/v1alpha1"
-kind: "IngressRoute"
-metadata:
-  name: blog
-spec:
-  entryPoints: ["web"]
-  routes:
-    - match: "Host(`aaronbatilo.dev`, `www.aaronbatilo.dev`)"
-      kind: "Rule"
-      middlewares:
-        - name: blog-http-to-https
-        - name: blog
-      services:
-        - name: blog
-          port: 80
----
-apiVersion: "traefik.containo.us/v1alpha1"
 kind: "IngressRoute"
 metadata:
   name: blog-secure
@@ -97,7 +53,8 @@ spec:
     - match: "Host(`aaronbatilo.dev`, `www.aaronbatilo.dev`)"
       kind: "Rule"
       middlewares:
-        - name: blog
+        - name: security-headers
+          namespace: traefik
       services:
         - name: blog
           port: 80
@@ -123,31 +80,6 @@ spec:
       kind: "Rule"
       middlewares:
         - name: calendar
-      services:
-        - name: noop@internal
-          kind: TraefikService
----
-apiVersion: "traefik.containo.us/v1alpha1"
-kind: "Middleware"
-metadata:
-  name: chat
-spec:
-  redirectRegex:
-    regex: .*
-    replacement: https://www.github.com/abatilo/chat
-    permanent: true
----
-apiVersion: "traefik.containo.us/v1alpha1"
-kind: "IngressRoute"
-metadata:
-  name: chat
-spec:
-  entryPoints: ["web", "websecure"]
-  routes:
-    - match: "Host(`chat.aaronbatilo.dev`)"
-      kind: "Rule"
-      middlewares:
-        - name: chat
       services:
         - name: noop@internal
           kind: TraefikService
