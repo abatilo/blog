@@ -14,17 +14,3 @@ jobs:
       contents: read
     with:
       name: blog
-  clean-ghcr:
-    name: Delete old unused container images
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          dig +short txt aaronbatilo.dev
-      - name: Delete old containers
-        uses: snok/container-retention-policy@v1
-        with:
-          image-names: blog
-          cut-off: A week ago UTC
-          account-type: personal
-          token: ${{ secrets.GH_PAT }}
-          keep-at-least: 10
