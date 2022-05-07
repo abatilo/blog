@@ -43,6 +43,19 @@ spec:
     matchLabels:
       app: blog
 ---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: blog
+spec:
+  dnsNames:
+    - aaronbatilo.dev
+    - www.aaronbatilo.dev
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
+  secretName: blog-cert
+---
 apiVersion: "traefik.containo.us/v1alpha1"
 kind: "IngressRoute"
 metadata:
@@ -68,6 +81,18 @@ spec:
     regex: .*
     replacement: https://www.calendarhero.to/aaron
     permanent: true
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: calendar
+spec:
+  dnsNames:
+    - calendar.aaronbatilo.dev
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
+  secretName: calendar-cert
 ---
 apiVersion: "traefik.containo.us/v1alpha1"
 kind: "IngressRoute"
