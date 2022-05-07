@@ -62,6 +62,8 @@ metadata:
   name: blog-secure
 spec:
   entryPoints: ["websecure"]
+  tls:
+    secretName: blog-cert
   routes:
     - match: "Host(`aaronbatilo.dev`, `www.aaronbatilo.dev`)"
       kind: "Rule"
@@ -100,6 +102,8 @@ metadata:
   name: calendar
 spec:
   entryPoints: ["web", "websecure"]
+  tls:
+    secretName: calendar-cert
   routes:
     - match: "Host(`calendar.aaronbatilo.dev`)"
       kind: "Rule"
