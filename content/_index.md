@@ -3,8 +3,11 @@ Read about my values on my [/about](/about) page.
 
 You can [email me](mailto:aaronbatilo@gmail.com) or you can [book on my
 calendar](https://calendar.aaronbatilo.dev) if you want to reach me directly!
+
 I'm open to contracting/consulting engagements so feel free to reach out if
-there's a project that I can help you with.
+there's a project that I can help you with. Find out more about my consulting
+and business persona at
+[https://mentallyanimated.com](https://mentallyanimated.com).
 
 ### Things I've built
 
