@@ -122,18 +122,18 @@ spec:
     regex: .*
     replacement: https://photos.app.goo.gl/Sbttz9nDzN2SzVYw6
     permanent: true
-# ---
-# apiVersion: cert-manager.io/v1
-# kind: Certificate
-# metadata:
-#   name: borabora
-# spec:
-#   dnsNames:
-#     - borabora.aaronbatilo.dev
-#   issuerRef:
-#     name: letsencrypt
-#     kind: ClusterIssuer
-#   secretName: borabora-cert
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: borabora
+spec:
+  dnsNames:
+    - borabora.aaronbatilo.dev
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
+  secretName: borabora-cert
 ---
 apiVersion: "traefik.containo.us/v1alpha1"
 kind: "IngressRoute"
@@ -141,8 +141,8 @@ metadata:
   name: borabora
 spec:
   entryPoints: ["web", "websecure"]
-  # tls:
-  #   secretName: borabora-cert
+  tls:
+    secretName: borabora-cert
   routes:
     - match: "Host(`borabora.aaronbatilo.dev`)"
       kind: "Rule"
