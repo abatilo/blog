@@ -1,16 +1,17 @@
+# syntax=docker/dockerfile:1.4
 FROM klakegg/hugo:0.89.4 as builder
 
 WORKDIR /src
-COPY config.toml ./
-COPY content ./content
-COPY layouts ./layouts
-COPY static ./static
-COPY themes ./themes
+COPY --link config.toml ./
+COPY --link content ./content
+COPY --link layouts ./layouts
+COPY --link static ./static
+COPY --link themes ./themes
 RUN hugo --minify
 
 FROM nginx:1.21.4-alpine
 
-COPY --from=builder /src/public /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --link --from=builder /src/public /usr/share/nginx/html
+COPY --link nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
