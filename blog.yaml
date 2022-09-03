@@ -32,12 +32,6 @@ spec:
           image: ghcr.io/abatilo/blog:DOCKER_TAG
           ports:
             - containerPort: 80
-          resources:
-            requests:
-              cpu: 0.1
-              memory: 128Mi
-            limits:
-              memory: 128Mi
 ---
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
