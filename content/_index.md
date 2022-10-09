@@ -1,4 +1,4 @@
-I talk about things on [buttondown](https://buttondown.email/abatilo/archive).
+I talk about things on [substack](https://sliceofexperiments.substack.com).
 Read about my values on my [/about](/about) page.
 
 You can [email me](mailto:aaronbatilo@gmail.com) or you can [book on my
