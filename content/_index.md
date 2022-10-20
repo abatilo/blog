@@ -1,8 +1,8 @@
-I talk about things on [substack](https://sliceofexperiments.substack.com).
-Read about my values on my [/about](/about) page.
+I talk about random things on
+[substack](https://sliceofexperiments.substack.com). Read about my values on my
+[/about](/about) page.
 
-You can [email me](mailto:aaronbatilo@gmail.com) or you can [book on my
-calendar](https://calendar.aaronbatilo.dev) if you want to reach me directly!
+You can [email me](mailto:aaronbatilo@gmail.com).
 
 I'm open to contracting/consulting engagements so feel free to reach out if
 there's a project that I can help you with. Find out more about my consulting

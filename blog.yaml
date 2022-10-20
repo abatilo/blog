@@ -108,45 +108,6 @@ spec:
 apiVersion: "traefik.containo.us/v1alpha1"
 kind: "Middleware"
 metadata:
-  name: calendar
-spec:
-  redirectRegex:
-    regex: .*
-    replacement: https://www.calendarhero.to/aaron
-    permanent: true
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: calendar
-spec:
-  dnsNames:
-    - calendar.aaronbatilo.dev
-  issuerRef:
-    name: letsencrypt
-    kind: ClusterIssuer
-  secretName: calendar-cert
----
-apiVersion: "traefik.containo.us/v1alpha1"
-kind: "IngressRoute"
-metadata:
-  name: calendar
-spec:
-  entryPoints: ["web", "websecure"]
-  tls:
-    secretName: calendar-cert
-  routes:
-    - match: "Host(`calendar.aaronbatilo.dev`)"
-      kind: "Rule"
-      middlewares:
-        - name: calendar
-      services:
-        - name: noop@internal
-          kind: TraefikService
----
-apiVersion: "traefik.containo.us/v1alpha1"
-kind: "Middleware"
-metadata:
   name: borabora
 spec:
   redirectRegex:
