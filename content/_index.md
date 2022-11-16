@@ -1,4 +1,4 @@
-I talk about random things on
+I talk about things that I've learned on
 [substack](https://sliceofexperiments.substack.com). Read about my values on my
 [/about](/about) page.
 
