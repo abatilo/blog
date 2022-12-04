@@ -1,4 +1,5 @@
 # syntax=docker/dockerfile:1.4
+
 FROM klakegg/hugo:0.89.4 as builder
 
 WORKDIR /src
