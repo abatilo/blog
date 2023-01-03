@@ -40,13 +40,6 @@ pygmentsUseClasses = true
     url = "https://www.github.com/abatilo"
     weight = 40
 
-  [[menu.main]]
-    identifier = "keybase"
-    name = "keybase"
-    title = "keybase"
-    url = "https://www.keybase.io/abatilo"
-    weight = 50
-
 [permalinks]
   posts = "/:title/"
 
