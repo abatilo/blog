@@ -17,6 +17,11 @@ These are all projects that I've built for myself and not for the company I was
 working for. For work history and experience, check out my [/resume](/resume)
 or my [linkedin](https://www.linkedin.com/in/abatilo).
 
+- [https://resumegpt.aaronbatilo.dev](https://resumegpt.aaronbatilo.dev) - A
+  chatbot trained on text about myself and my career history. You can ask it
+  questions about me and it'll respond with a natural tone. [Read
+  more](https://www.sliceofexperiments.com/p/building-a-personalized-ask-me-anything)
+- [https://terragen.sh](https://terragen.sh) - MVP for terraform code generation
 - [https://catstories.ai](https://catstories.ai) - Get a daily heart warming story about cats.
 - [https://github.com/abatilo/chat](https://github.com/abatilo/chat), A small chat
   API, written mostly as an exercise in database schema design.
