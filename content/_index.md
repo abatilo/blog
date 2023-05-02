@@ -22,7 +22,8 @@ or my [linkedin](https://www.linkedin.com/in/abatilo).
   questions about me and it'll respond with a natural tone. [Read
   more](https://www.sliceofexperiments.com/p/building-a-personalized-ask-me-anything)
 - [https://terragen.sh](https://terragen.sh) - MVP for terraform code generation
-- [https://catstories.ai](https://catstories.ai) - Get a daily heart warming story about cats.
+- [https://sudokurace.io](https://sudokurace.io) - Real-time multiplayer cooperative sudoku boards. Play with as many people as you want on the same board
+- [https://catstories.ai](https://catstories.ai) - Get a daily heart warming story about cats
 - [https://github.com/abatilo/chat](https://github.com/abatilo/chat), A small chat
   API, written mostly as an exercise in database schema design.
 - [https://github.com/abatilo/catfacts](https://github.com/abatilo/catfacts), Get a
