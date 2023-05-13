@@ -98,7 +98,7 @@ spec:
 apiVersion: "traefik.containo.us/v1alpha1"
 kind: "Middleware"
 metadata:
-  name: borabora
+  name: readme
 spec:
   redirectRegex:
     regex: .*
@@ -108,28 +108,67 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: borabora
+  name: readme
 spec:
   dnsNames:
-    - borabora.aaronbatilo.dev
+    - readme.aaronbatilo.dev
   issuerRef:
     name: letsencrypt
     kind: ClusterIssuer
-  secretName: borabora-cert
+  secretName: readme-cert
 ---
 apiVersion: "traefik.containo.us/v1alpha1"
 kind: "IngressRoute"
 metadata:
-  name: borabora
+  name: readme
 spec:
   entryPoints: ["web", "websecure"]
   tls:
-    secretName: borabora-cert
+    secretName: readme-cert
   routes:
-    - match: "Host(`borabora.aaronbatilo.dev`)"
+    - match: "Host(`readme.aaronbatilo.dev`)"
       kind: "Rule"
       middlewares:
-        - name: borabora
+        - name: readme
+      services:
+        - name: noop@internal
+          kind: TraefikService
+---
+apiVersion: "traefik.containo.us/v1alpha1"
+kind: "Middleware"
+metadata:
+  name: readme
+spec:
+  redirectRegex:
+    regex: .*
+    replacement: https://abatilo.notion.site/Hi-there-I-m-Aaron-57c6fd6736954b4e93303d8b9d48d789
+    permanent: true
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: readme
+spec:
+  dnsNames:
+    - readme.aaronbatilo.dev
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
+  secretName: readme-cert
+---
+apiVersion: "traefik.containo.us/v1alpha1"
+kind: "IngressRoute"
+metadata:
+  name: readme
+spec:
+  entryPoints: ["web", "websecure"]
+  tls:
+    secretName: readme-cert
+  routes:
+    - match: "Host(`readme.aaronbatilo.dev`)"
+      kind: "Rule"
+      middlewares:
+        - name: readme
       services:
         - name: noop@internal
           kind: TraefikService
