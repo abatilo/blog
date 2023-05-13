@@ -63,7 +63,7 @@ culture on the team. You'll always find me advocating for the long term.
 
 **I am not a hero.** I don't believe in heroics. I don't believe in working
 crazy hours. I don't believe in burning myself out. I've worked at the 5 person
-startup and been in that environment. I'm married and have a dog. They're my
+startup and been in that environment. I'm married and have a dog and cat. They're my
 top priority. Sacrificing myself to their detriment is not something I'm
 willing to do at this point in my life.
 
