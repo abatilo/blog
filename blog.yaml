@@ -137,7 +137,7 @@ spec:
 apiVersion: "traefik.containo.us/v1alpha1"
 kind: "Middleware"
 metadata:
-  name: readme
+  name: whoareyou
 spec:
   redirectRegex:
     regex: .*
@@ -147,28 +147,28 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: readme
+  name: whoareyou
 spec:
   dnsNames:
-    - readme.aaronbatilo.dev
+    - whoareyou.aaronbatilo.dev
   issuerRef:
     name: letsencrypt
     kind: ClusterIssuer
-  secretName: readme-cert
+  secretName: whoareyou-cert
 ---
 apiVersion: "traefik.containo.us/v1alpha1"
 kind: "IngressRoute"
 metadata:
-  name: readme
+  name: whoareyou
 spec:
   entryPoints: ["web", "websecure"]
   tls:
-    secretName: readme-cert
+    secretName: whoareyou-cert
   routes:
-    - match: "Host(`readme.aaronbatilo.dev`)"
+    - match: "Host(`whoareyou.aaronbatilo.dev`)"
       kind: "Rule"
       middlewares:
-        - name: readme
+        - name: whoareyou
       services:
         - name: noop@internal
           kind: TraefikService
