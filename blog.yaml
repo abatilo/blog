@@ -86,7 +86,7 @@ spec:
   tls:
     secretName: blog-cert
   routes:
-    - match: "Host(`aaronbatilo.dev`, `www.aaronbatilo.dev`, `omgaaron.wtf`, `www.omgaaron.wtf`)"
+    - match: "Host(`aaronbatilo.dev`, `www.aaronbatilo.dev`)"
       kind: "Rule"
       middlewares:
         - name: security-headers
