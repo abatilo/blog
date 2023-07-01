@@ -73,7 +73,7 @@ spec:
     - aaronbatilo.dev
     - www.aaronbatilo.dev
   issuerRef:
-    name: letsencrypt
+    name: letsencrypt-cloudflare
     kind: ClusterIssuer
   secretName: blog-cert
 ---
@@ -113,7 +113,7 @@ spec:
   dnsNames:
     - readme.aaronbatilo.dev
   issuerRef:
-    name: letsencrypt
+    name: letsencrypt-cloudflare
     kind: ClusterIssuer
   secretName: readme-cert
 ---
@@ -152,7 +152,7 @@ spec:
   dnsNames:
     - whoareyou.aaronbatilo.dev
   issuerRef:
-    name: letsencrypt
+    name: letsencrypt-cloudflare
     kind: ClusterIssuer
   secretName: whoareyou-cert
 ---
