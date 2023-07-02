@@ -82,7 +82,7 @@ kind: "IngressRoute"
 metadata:
   name: blog-secure
 spec:
-  entryPoints: ["websecure"]
+  entryPoints: ["web"]
   tls:
     secretName: blog-cert
   routes:
@@ -122,7 +122,7 @@ kind: "IngressRoute"
 metadata:
   name: readme
 spec:
-  entryPoints: ["web", "websecure"]
+  entryPoints: ["web"]
   tls:
     secretName: readme-cert
   routes:
@@ -161,7 +161,7 @@ kind: "IngressRoute"
 metadata:
   name: whoareyou
 spec:
-  entryPoints: ["web", "websecure"]
+  entryPoints: ["web"]
   tls:
     secretName: whoareyou-cert
   routes:
