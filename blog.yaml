@@ -96,7 +96,7 @@ spec:
 apiVersion: "traefik.containo.us/v1alpha1"
 kind: "Middleware"
 metadata:
-  name: readme
+  name: borabora
 spec:
   redirectRegex:
     regex: .*
@@ -118,14 +118,14 @@ spec:
 apiVersion: "traefik.containo.us/v1alpha1"
 kind: "IngressRoute"
 metadata:
-  name: readme
+  name: borabora
 spec:
   entryPoints: ["web"]
   routes:
-    - match: "Host(`readme.aaronbatilo.dev`)"
+    - match: "Host(`borabora.aaronbatilo.dev`)"
       kind: "Rule"
       middlewares:
-        - name: readme
+        - name: borabora
       services:
         - name: noop@internal
           kind: TraefikService
