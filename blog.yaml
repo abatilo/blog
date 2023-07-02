@@ -83,8 +83,6 @@ metadata:
   name: blog-secure
 spec:
   entryPoints: ["web"]
-  tls:
-    secretName: blog-cert
   routes:
     - match: "Host(`aaronbatilo.dev`, `www.aaronbatilo.dev`)"
       kind: "Rule"
@@ -123,8 +121,6 @@ metadata:
   name: readme
 spec:
   entryPoints: ["web"]
-  tls:
-    secretName: readme-cert
   routes:
     - match: "Host(`readme.aaronbatilo.dev`)"
       kind: "Rule"
@@ -162,8 +158,6 @@ metadata:
   name: whoareyou
 spec:
   entryPoints: ["web"]
-  tls:
-    secretName: whoareyou-cert
   routes:
     - match: "Host(`whoareyou.aaronbatilo.dev`)"
       kind: "Rule"
