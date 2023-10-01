@@ -1,10 +1,7 @@
-baseURL = "https://www.aaronbatilo.dev"
+baseURL = "/"
 title = "Aaron Batilo"
 theme = "etch"
 languageCode = "en-US"
-enableInlineShortcodes = true
-pygmentsCodeFences = true
-pygmentsUseClasses = true
 
 [params]
   description = "The website of someone who owns a light up keyboard"
@@ -12,13 +9,6 @@ pygmentsUseClasses = true
   highlight = true
 
 [menu]
-  [[menu.main]]
-    identifier = "about"
-    name = "about"
-    title = "about"
-    url = "/about"
-    weight = 10
-
   [[menu.main]]
     identifier = "resume"
     name = "resume"
@@ -31,14 +21,14 @@ pygmentsUseClasses = true
     name = "linkedin"
     title = "linkedin"
     url = "https://www.linkedin.com/in/abatilo"
-    weight = 30
+    weight = 20
 
   [[menu.main]]
     identifier = "github"
     name = "github"
     title = "github"
     url = "https://www.github.com/abatilo"
-    weight = 40
+    weight = 30
 
 [permalinks]
   posts = "/:title/"
