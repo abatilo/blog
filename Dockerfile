@@ -9,7 +9,7 @@ COPY --link static ./static
 COPY --link themes ./themes
 RUN hugo --minify
 
-FROM nginx:1.21.4-alpine
+FROM nginx:1.25.2-alpine
 
 COPY --link --from=builder /src/public /usr/share/nginx/html
 COPY --link nginx.conf /etc/nginx/conf.d/default.conf

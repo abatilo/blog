@@ -1,11 +1,11 @@
-<h3>Posts</h3>
-<ul id="posts">
-{{ range where site.RegularPages "Type" "in" site.Params.mainSections }}
-    <li>
-        <a href="{{ .Permalink }}">
-            {{- .Title -}}
-            <small><time>{{ .Date.Format "Jan 2, 2006" }}</time></small>
-        </a>
-    </li>
-{{ end }}
+<hr />
+<ul id="posts" style="list-style-type: none">
+  {{ range where site.RegularPages "Type" "in" site.Params.mainSections }}
+  <li>
+    <a href="{{ .Permalink }}">
+      <small><time>{{ .Date.Format "01/06" }}</time></small>
+      {{" "}}{{- .Title -}}
+    </a>
+  </li>
+  {{ end }}
 </ul>

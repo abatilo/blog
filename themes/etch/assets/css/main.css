@@ -97,3 +97,7 @@ main#content h3 {
   font-size: 19px;
   font-size: 1.9rem;
 }
+
+ul#posts {
+  padding: 0;
+}
