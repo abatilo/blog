@@ -1,5 +1,5 @@
-# syntax=docker/dockerfile:1.4
-FROM hugomods/hugo:0.117.0 as builder
+# syntax=docker/dockerfile:1
+FROM hugomods/hugo:0.121.1 as builder
 
 WORKDIR /src
 COPY --link config.toml ./
@@ -9,7 +9,7 @@ COPY --link static ./static
 COPY --link themes ./themes
 RUN hugo --minify
 
-FROM nginx:1.25.2-alpine
+FROM nginx:1-alpine
 
 COPY --link --from=builder /src/public /usr/share/nginx/html
 COPY --link nginx.conf /etc/nginx/conf.d/default.conf
