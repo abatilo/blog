@@ -77,7 +77,7 @@ spec:
     kind: ClusterIssuer
   secretName: blog-cert
 ---
-apiVersion: "traefik.containo.us/v1alpha1"
+apiVersion: "traefik.io/v1alpha1"
 kind: "IngressRoute"
 metadata:
   name: blog-secure
@@ -93,7 +93,7 @@ spec:
         - name: blog
           port: 80
 ---
-apiVersion: "traefik.containo.us/v1alpha1"
+apiVersion: "traefik.io/v1alpha1"
 kind: "Middleware"
 metadata:
   name: borabora
@@ -115,7 +115,7 @@ spec:
     kind: ClusterIssuer
   secretName: readme-cert
 ---
-apiVersion: "traefik.containo.us/v1alpha1"
+apiVersion: "traefik.io/v1alpha1"
 kind: "IngressRoute"
 metadata:
   name: borabora
@@ -130,7 +130,7 @@ spec:
         - name: noop@internal
           kind: TraefikService
 ---
-apiVersion: "traefik.containo.us/v1alpha1"
+apiVersion: "traefik.io/v1alpha1"
 kind: "Middleware"
 metadata:
   name: whoareyou
