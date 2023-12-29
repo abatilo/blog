@@ -10,6 +10,13 @@ languageCode = "en-US"
 
 [menu]
   [[menu.main]]
+    identifier = "about"
+    name = "about"
+    title = "about"
+    url = "/about"
+    weight = 10
+
+  [[menu.main]]
     identifier = "resume"
     name = "resume"
     title = "resume"
@@ -21,14 +28,14 @@ languageCode = "en-US"
     name = "linkedin"
     title = "linkedin"
     url = "https://www.linkedin.com/in/abatilo"
-    weight = 20
+    weight = 30
 
   [[menu.main]]
     identifier = "github"
     name = "github"
     title = "github"
     url = "https://www.github.com/abatilo"
-    weight = 30
+    weight = 40
 
 [permalinks]
   posts = "/:title/"
