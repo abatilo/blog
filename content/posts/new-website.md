@@ -1,12 +1,5 @@
 ---
-title: "New website?"
-date: 2023-08-26
+title: "Untitled"
+date: 2023-12-29
 draft: true
 ---
-Yeah, I wanted to try using hugo instead of jekyll
-
-```go
-func main() {
-  fmt.Println("Hello")
-}
-```
