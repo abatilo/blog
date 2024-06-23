@@ -8,7 +8,7 @@ COPY --link static ./static
 COPY --link themes ./themes
 RUN hugo --minify
 
-FROM cgr.dev/chainguard/nginx:latest
+FROM nginx:1.27.0-alpine
 
 COPY --link --from=builder /src/public /usr/share/nginx/html
 COPY --link nginx.conf /etc/nginx/conf.d/default.conf
