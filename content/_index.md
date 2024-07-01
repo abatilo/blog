@@ -14,7 +14,7 @@ and business persona at
 ---
 
 These are all projects that I've built for myself and not for the company I was
-working for. For work history and experience, check out my [/resume](/resume)
+working for. For work history and experience, check out my [resume](/resume.pdf)
 or my [linkedin](https://www.linkedin.com/in/abatilo).
 
 - [https://resumegpt.aaronbatilo.dev](https://resumegpt.aaronbatilo.dev) - A

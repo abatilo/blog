@@ -23,7 +23,7 @@ pygmentsUseClasses = true
     identifier = "resume"
     name = "resume"
     title = "resume"
-    url = "/resume"
+    url = "/resume.pdf"
     weight = 20
 
   [[menu.main]]
