@@ -37,6 +37,13 @@ languageCode = "en-US"
     url = "https://www.github.com/abatilo"
     weight = 40
 
+  [[menu.main]]
+    identifier = "substack"
+    name = "substack"
+    title = "substack"
+    url = "https://sliceofexperiments.com/archive"
+    weight = 50
+
 [permalinks]
   posts = "/:title/"
 
